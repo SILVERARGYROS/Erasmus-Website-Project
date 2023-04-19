@@ -1,0 +1,141 @@
+body {  
+  background-color: #683257; 
+  /* background-image: url("media/photos/backround.png"); */
+  /* background-image: linear-gradient(white, rgba(255,153,204,1)); */
+  font-family: 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 11pt;  
+  width: 100%;
+  color: #ffffff;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.header{
+  overflow: hidden;
+  color: #000;
+  height: 15%;
+  vertical-align: middle;  
+}
+
+.header-container{
+  background-color: #fff;
+
+  border-bottom: 5px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*TOP NAVIGATOR STYLE CSS*/
+
+/* Style the links inside the navigation bar */
+.header a{
+  float: left;
+  color:#000;
+  border:#000;
+  border-color: #000;
+  border-width: thick;
+  text-align: center;
+  vertical-align: middle;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+/* Add a color to the active/current link */
+.header a:active {
+  background-color: #666;
+  color: lightgrey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* Change the color of links on hover */
+.header a:hover {
+  background-color: #efe1e9;
+  border-radius: 30px;
+  color: #683257;
+  transition: 0.3s;
+}
+
+/* Right-aligned section inside the top navigation */
+.header-middle{
+  float:none;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.header-middle a{
+  font-size: large;
+}
+
+.header-right {
+  float: right;
+  vertical-align: middle;
+}
+
+input[type = "checkbox"] {
+  visibility: hidden;
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+label.container {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background: #d3d3d3;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 9px 9px 29px #969696,
+             -9px -9px 29px #ffffff;
+  margin-right: 10px;
+}
+
+label.shadow {
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50px;
+  left: 5px;
+  top: 5px;
+  box-shadow: inset 3px 3px 10px #969696,
+              inset -3px -3px 5px #ffffffbd;
+  cursor: pointer;
+}
+
+.container span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ffaa00;
+  margin: 5px;
+  border-radius: 50px;
+  font-size: 20px;
+  transition: all 0.3s ease-in;
+  position: relative;
+  left: 0;
+  z-index: 1;
+}
+
+.container span::after {
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  transition-delay: 5s;
+}
+
+input[type = "checkbox"]:checked ~ span {
+  left: 29px;
+  transition: 0.3s ease-in;
+  background: #0a100d;
+  transform: rotate(220deg);
+}
+
+/*jesus plz take the wheel*/
+

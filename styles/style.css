@@ -1,6 +1,7 @@
 body {  
   background-color: #683257; 
-  /* background-image: url("media/photos/backround.png"); */
+  /* background-image: url("../media/photos/backround.png"); */
+  background-size: cover;
   /* background-image: linear-gradient(white, rgba(255,153,204,1)); */
   font-family: 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 11pt;  
@@ -19,7 +20,6 @@ body {
 
 .header-container{
   background-color: #fff;
-
   border-bottom: 5px solid #000;
   display: flex;
   justify-content: center;
@@ -139,3 +139,25 @@ input[type = "checkbox"]:checked ~ span {
 
 /*jesus plz take the wheel*/
 
+
+
+/*Sticky Top Nav Attempt*/
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 100px;
+}
+
+/*Sticky Top Nav Attempt*/

@@ -12,7 +12,7 @@
     <!-- <body> -->
 
         <!--Topbar Navigation Code-->
-        <div class="header">
+        <div class="header" id="header">
             <div div class="header-container">
                 <a class="button" href="index.html"><b>Erasmus</b></a>
                 <div class="header-middle">
@@ -33,9 +33,46 @@
             </div>
         </div>
         <!--Topbar Navigation Code-->
-        <br><br><br><br>
+
+        <p class="content" style="color: red">
+
+            Αρχική Σελίδα
+            
+            Καλωσήρθατε στην επίσημη ιστοσελίδα πρακτικής απασχόλισης Erasmus<br>
+            Εδώ μπορείτε να βρείτε πληροφορίες σχετικά με το τι είναι το Erasmus,
+            ποιες είναι οι προϋποθέσεις αίτησης και τι γνώσεις και εμπειρίες αποκτούν οι φοιτητές.  
+        </p>
         
+        <br><br><br><br><br><br>
+
+        Αρχική Σελίδα
+            
+            Καλωσήρθατε στην επίσημη ιστοσελίδα πρακτικής απασχόλισης Erasmus<br>
+            Εδώ μπορείτε να βρείτε πληροφορίες σχετικά με το τι είναι το Erasmus,
+            ποιες είνα
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        Αρχική Σελίδα
+            
+            Καλωσήρθατε στην επίσημη ιστοσελίδα πρακτικής απασχόλισης Erasmus<br>
+            Εδώ μπορείτε να βρείτε πληροφορίες σχετικά με το τι είναι το Erasmus,
+            ποιες s
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        Αρχική Σελίδα
+            
+            Καλωσήρθατε στην επίσημη ιστοσελίδα πρακτικής απασχόλισης Erasmus<br>
+            Εδώ μπορείτε να βρείτε πληροφορίες σχετικά με το τι είναι το Erasmus,
+            ποιες είνα
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+
         <!-- <div class="card">
+            
             <div class="card-overlay"><h1>Αρχική Σελίδα</h1></div>
            d <div class="card-inner">
                 <h3>
@@ -45,7 +82,21 @@
                 </h3>
             </div>
         </div> -->
+        
 
-
+        <script ty>
+            window.onscroll = function() {myFunction()};
+            
+            var header = document.getElementById("header");
+            var sticky = header.offsetTop;
+            
+            function myFunction() {
+              if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+              } else {
+                header.classList.remove("sticky");
+              }
+            }
+        </script>
     </body>
 </html>

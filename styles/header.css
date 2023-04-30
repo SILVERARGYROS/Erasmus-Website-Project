@@ -1,20 +1,7 @@
-body {  
-  background-color: #683257; 
-  /* background-image: url("../media/photos/backround.png"); */
-  background-size: cover;
-  /* background-image: linear-gradient(white, rgba(255,153,204,1)); */
-  font-family: 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 11pt;  
-  width: 100%;
-  color: #ffffff;
-  margin: 0 auto;
-  height: 100%;
-}
-
 .header{
   overflow: hidden;
   color: #000;
-  height: 15%;
+  height: 20%;
   vertical-align: middle;  
 }
 
@@ -22,10 +9,15 @@ body {
   background-color: #fff;
   border-bottom: 5px solid #000;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.header-container .button{
+  position: absolute;
+  justify-content: left;
+
 }
 
 /*TOP NAVIGATOR STYLE CSS*/
@@ -39,10 +31,11 @@ body {
   border-width: thick;
   text-align: center;
   vertical-align: middle;
-  padding: 14px 16px;
+  padding: 10px 16px;
   text-decoration: none;
   font-size: x-large;
   cursor: pointer;
+  transition: 0.4s;
 }
 
 /* Add a color to the active/current link */
@@ -51,6 +44,7 @@ body {
   color: lightgrey;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+  transition: 0.1s;
 }
 
 /* Change the color of links on hover */
@@ -58,23 +52,69 @@ body {
   background-color: #efe1e9;
   border-radius: 30px;
   color: #683257;
-  transition: 0.3s;
+  transition: 0.4s;
+}
+
+.header-left{
+  float: left;
+  align-items: left;
 }
 
 /* Right-aligned section inside the top navigation */
 .header-middle{
-  float:none;
   margin: auto;
   vertical-align: middle;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-middle a{
-  font-size: large;
+  font-size: small;
 }
 
+.header-middle .signup{
+  box-shadow:50px, 50px, 50px,#000;
+  border: 2px solid black;
+  border-color: #683257;
+  border-radius: 30px;
+  color: #683257;
+  transition: 0.5s;
+  font-weight: 600;
+  font-size: small;
+  margin-left: 40px;
+}
+
+.header-middle .login{
+  justify-content: center;
+  box-shadow:50px, 50px, 50px,#000;
+  border: 2px solid black;
+  border-color: #683257;
+  border-radius: 30px;
+  color: #683257;
+  transition: 0.5s;
+  font-weight: 600;
+  font-size: small;
+  margin-left: 10px;
+}
+
+.header-middle .signup:hover{
+  color: #fff;
+  background-color: #683257;
+  transition: 0.5s;
+}
+
+.header-middle a{
+  font-weight: 600;
+  font-size: small;
+}
+
+
 .header-right {
+  width: 37,5%;
   float: right;
+  float-items: right;
   vertical-align: middle;
+  justify-content: right;
 }
 
 input[type = "checkbox"] {
@@ -137,12 +177,6 @@ input[type = "checkbox"]:checked ~ span {
   transform: rotate(220deg);
 }
 
-/*jesus plz take the wheel*/
-
-
-
-/*Sticky Top Nav Attempt*/
-
 /* Page content */
 .content {
   padding: 16px;
@@ -157,7 +191,5 @@ input[type = "checkbox"]:checked ~ span {
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
-  padding-top: 100px;
+  padding-top: 200px;
 }
-
-/*Sticky Top Nav Attempt*/

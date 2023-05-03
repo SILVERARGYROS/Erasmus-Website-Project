@@ -1,4 +1,10 @@
-body {  
+html{
+  height: 100%;
+  width: 100%;
+}
+
+
+body{  
   background-color: #fff; 
   /* background-image: url("../media/photos/background.png"); */
   background-image: -webkit-image-set(scroll);
@@ -17,115 +23,134 @@ body {
 
 
 
-/*jesus plz take the wheel*/
-
-
-
-/*Sticky Top Nav Attempt*/
-
-
-
-
-/* parallax effect attempt
-
-.parallax {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.parallax__layer--base {
-  background-color: white;
-  transform: translateZ(0);
-}
-.parallax__layer--back {
-  background-color: cyan;
-  transform: translateZ(-1px) scale(2);
-}
-.parallax__layer--deep {
-  background-color: blue;
-  transform: translateZ(-2px) scale(3);
-}
-.parallax__group {
-  transform: translate3d(700px, 0, -800px) rotateY(30deg);
-} */
-
-.welcome{
-  padding:0;
-  margin:0;
-}
-
 .welcome1 {
-  /* background-size: contain; */
+  background-image: url("../media/photos/background.png");
   width: 100%;
   height: 100%;
-  padding:0;
-  margin:0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.welcome1 img{
-  /* background-size: contain; */
-  max-width: 100%;
-  max-height: 100%;
+.welcome1 .title{
+  font-size: 120px;
+  font-weight:bolder;
+  vertical-align: baseline;
+  text-align-last: center;
+}
 
+
+
+.welcome1 .learn-more-button{
+  padding: 30px;
+  background-color: #a03cfc;
+  border-radius: 60px;
+  color: #ffffff;
+  font-size: large;
+  transition: 0.5s;
+}
+
+.welcome1 .learn-more-button:hover{
+  background-color: #683257;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .welcome2{
-  /* background-size: contain; */
+  background-image: url("../media/photos/background2222.png");
   width: 100%;
   height: 100%;
-  padding:0;
-  margin:0;
-}
-
-.welcome2 img{
-  /* background-size: contain; */
-  max-width: 100%;
-  max-height: 100%;
+  background-size: cover;
 
 }
+
+.welcome2 .title{
+  margin-left: 5%;
+
+  font-size: 80px;
+  font-weight:bolder;
+  vertical-align: baseline;
+  text-align-last: left;
+}
+
+.welcome2 .content{
+  margin-left:5%;
+  font-size: 30px;
+  font-weight:bolder;
+  vertical-align: baseline;
+  text-align-last: left;
+}
+
+.welcome2 .learn-more-button{
+  padding: 30px;
+  background-color: #a03cfc;
+  border-radius: 60px;
+  color: #ffffff;
+  font-size: large;
+  transition: 0.5s;
+  }
+
+.welcome2 .learn-more-button:hover{
+  background-color: #683257;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 
 .welcome3{
-  /* background-image: url("../media/photos/background2.png"); */
-  background-image: cover;
-  background-color: #000;
+  overflow: hidden;
+  background-color: #ff0000; /*debugging purposes*/
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: flex;
+  justify-content: left;
+  padding-bottom: 20%; 
 }
 
 .welcome3_1{
-  /* background-image: url("../media/photos/background2.png"); */
-  background-image: cover;
-  width: 60%;
-  height: 100%;
-  color: red;
-  background-color: #eee;
-  justify-self: left;
+  background-color: #ffffff;
+  width: 75%;
+  height: 150%;
+}
+
+.welcome3_1 .main_title{
+  color:#000;
+  font-size: xx-large;
+  font-weight:bolder;
+  margin-left:5%
+  
+}
+
+.welcome3_1 .main_content{
+  color:#000;
+  font-size: xx-large;
+  margin-left:5%
+}
+
+.welcome3 .learn-more-button{
+  padding: 30px;
+  background-color: #a03cfc;
+  border-radius: 60px;
+  color: #ffffff;
+  font-size: large;
+  transition: 0.5s;
+  }
+
+.welcome3 .learn-more-button:hover{
+  background-color: #683257;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .welcome3_2{
-  /* background-image: url("../media/photos/background2.png"); */
-  background-image: cover;
-  width: 40%;
-  height: 100%;
-  background-color: #fff;
-  margin:0;
-  padding:0;
+  background-color: #0000ff; /*debugging purposes */
+  background-image: url("../media/photos/background3.png");
+  width: 32.5%;
+  height: 150%;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain; 
   justify-self: right;
-}
-
-.welcome3 img{
-  /* background-image: url("../media/photos/background2.png"); */
-  background-image: cover;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
 }

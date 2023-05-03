@@ -1,6 +1,6 @@
 .header{
   color: #000;
-  height: 20%;
+  /* height: 20%; */
   vertical-align: middle;  
   position: sticky;
   /* box-shadow: 0 3px 5px rgba(57, 63, 72, 0.9); */
@@ -37,22 +37,25 @@
   font-size: x-large;
   cursor: pointer;
   transition: 0.4s;
-}
-
-/* Add a color to the active/current link */
-.header a:active {
-  background-color: #666;
-  color: lightgrey;
-  box-shadow: 0 5px #683257;
-  transform: translateY(4px);
-  transition: 0.1s;
+  border-radius: 30px;
 }
 
 /* Change the color of links on hover */
 .header a:hover {
   background-color: #efe1e9;
+  /* background-color: #683257; */
   border-radius: 30px;
   color: #683257;
+  /* color: #fff; */
+  transition: 0.4s;
+}
+
+/* Add a color to the active/current link */
+.header a:active {
+  background-color: #683457;
+  color: lightgrey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
   transition: 0.4s;
 }
 
@@ -76,7 +79,6 @@
 }
 
 .header-right .signup{
-  box-shadow:50px, 50px, 50px,#000;
   border: 2px solid #683257;
   border-radius: 30px;
   color: #683257;
@@ -180,12 +182,12 @@ input[type = "checkbox"]:checked ~ span {
 }
 
 
-
 /*Sticky Header CSS code*/
 
 /* Page content */
 .content {
   padding-top: 0px;
+  height:100%;
 }
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */

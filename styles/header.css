@@ -42,11 +42,11 @@
 
 /* Change the color of links on hover */
 .header a:hover {
-  background-color: #efe1e9;
-  /* background-color: #683257; */
+  /* background-color: #efe1e9; */
+  background-color: #683257;
   border-radius: 30px;
-  color: #683257;
-  /* color: #fff; */
+  /* color: #683257; */
+  color: #fff;
   transition: 0.4s;
 }
 
@@ -113,9 +113,14 @@
 
 }
 
-.header-right .language-button{
+.header-right .language-button-en{
   float: left;
-  margin-right: 15px;
+  margin-right: 5px;
+}
+
+.header-right .language-button-en{
+  float: left;
+  margin-right: 25px;
 }
 
 

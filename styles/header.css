@@ -78,6 +78,10 @@
   margin-right: 15px;
 }
 
+.header-right{
+  padding-top: 10px;
+}
+
 .header-right .signup{
   border: 2px solid #683257;
   border-radius: 30px;
@@ -86,6 +90,7 @@
   font-weight: 600;
   font-size: small;
   margin-left: 40px;
+  top: 5%;
 }
 
 .header-right .signup:hover{
@@ -190,7 +195,7 @@ input[type = "checkbox"]:checked ~ span {
 /*Sticky Header CSS code*/
 
 /* Page content */
-.content {
+.header-content {
   padding-top: 0px;
   height:100%;
 }
@@ -204,6 +209,6 @@ input[type = "checkbox"]:checked ~ span {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 4.3%; /*sweet spot on pc is 80*/
+.sticky + .header-content {
+  padding-top: 5.9%; /*sweet spot on pc is 80*/
 }

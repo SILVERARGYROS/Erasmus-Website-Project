@@ -90,7 +90,6 @@ body{
   cursor: pointer;
 }
 
-
 .welcome3{
   overflow: hidden;
   background-color: #a03cfc; /*debugging purposes*/
@@ -112,7 +111,6 @@ body{
   font-size: x-large;
   font-weight:bolder;
   margin-left:5%
-  
 }
 
 .welcome3_1 .main_content{

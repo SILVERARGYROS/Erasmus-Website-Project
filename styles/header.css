@@ -3,6 +3,8 @@
   /* height: 20%; */
   vertical-align: middle;  
   position: sticky;
+  z-index: 100;
+
   /* box-shadow: 0 3px 5px rgba(57, 63, 72, 0.9); */
 }
 
@@ -202,7 +204,7 @@ input[type = "checkbox"]:checked ~ span {
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
-  position: fixed;
+  position: fixed;  
   top: 0;
   width: 100%;
   box-shadow: none;

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <link href="styles/header.css" rel="stylesheet" type="text/css">
+        <link href="styles/footer.css" rel="stylesheet" type="text/css">
+        <link href="styles/login.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="author" content="Αργυρός Κωνσταντίνος">
+        <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8"/>
+        <title>Erasmus Login Page</title>
+    </head>
+    <body>
+
+        <!--Topbar Navigation Code-->
+        <div class="header" id="header">
+            <div class="header-container">
+                <a class="button" href="index.html"><b>Erasmus</b></a>
+
+                <div class="header-middle">
+                    <a href="index.html">Αρχική</a>
+                    <a href="more.html">Περισσότερα</a>
+                    <a href="reqs.html">Προϋποθέσεις</a>
+                    <a href="application.html">Αίτηση</a>
+                </div>
+                <div class="header-right">
+                    <a class="language-button-gr"><img src="media/photos/gr-icon.jpg"></a>
+                    <a class="language-button-en"><img src="media/photos/en-icon.jpg"></a>
+                    <label class="container">
+                        <input id="check" type="checkbox">
+                        <span></span>
+                        <label for="check" class="shadow"></label>
+                    </label>
+                    <a class="signup" href="signup.html">Εγγραφή</a>
+                    <a class="login" href="login.html">Σύνδεση</a>
+                </div>
+            </div>
+        </div>
+        <!--Topbar Navigation Code-->
+        
+        <div class="header-content">
+            <div class="welcome1">
+                    <div class="content">
+                        <div class="text">
+                           Login
+                        </div>
+                        <form action="#">
+                           <div class="field">
+                              <input required="" type="text" class="input" placeholder="όνομα χρήστη">
+                              <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><path class="" data-original="#000000" fill="#595959" d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z"></path></g></svg></span>
+                           </div>
+                           <div class="field">
+                              <input required="" type="password" class="input" placeholder="κωδικός πρόσβασης">
+                              <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><path class="" data-original="#000000" fill="#595959" d="M336 192h-16v-64C320 57.406 262.594 0 192 0S64 57.406 64 128v64H48c-26.453 0-48 21.523-48 48v224c0 26.477 21.547 48 48 48h288c26.453 0 48-21.523 48-48V240c0-26.477-21.547-48-48-48zm-229.332-64c0-47.063 38.27-85.332 85.332-85.332s85.332 38.27 85.332 85.332v64H106.668zm0 0"></path></g></svg></span>
+                            </div>
+                           <div class="forgot-pass">
+                              <a href="#">Ξεχάσατε τον κωδικό σας;</a>
+                           </div>
+                           <button class="form-button">Sign in</button>
+                           <div class="sign-up">
+                              Δεν είστε μέλος; 
+                              <a href="#">Εγγραφτείτε τώρα</a>
+                           </div>
+                        </form>
+                     </div>
+            </div>
+        </div>
+
+
+        <!--Footer Code-->
+        <div class="footer">
+            <ul class="socials">
+                <li><a href="#" class="fa fa-facebook"></a></li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+                <li><a href="#" class="fa fa-youtube"></a></li>
+                <li><a href="#" class="fa fa-reddit"></a></li>
+                <li><a href="#" class="fa fa-linkedin"></a></li>
+            </ul>
+            <section class="footer-logo">
+                <a href="https://commission.europa.eu/legal-notice_en">ERASMUS</a> 
+            </section>
+            <section class="footer-copyright">
+                <a href="https://commission.europa.eu/legal-notice_en">Copyright © 2023 Erasmus, Inc.</a> 
+                <!--to type C press alt + 0 1 6 9 from numpad-->
+            </section>
+        </div>
+        <!--Footer Code-->
+    </body>
+    <script src="scripts/stickyHeader.js"></script>     
+</html>

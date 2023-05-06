@@ -88,9 +88,11 @@
 .fa-facebook {      /*needed tweeking to make it same size as the rest*/
     /* background: #3B5998; */
     color: white;
-    padding: 11px;
-    padding-left: 14px;
-    padding-right: 14px;
+    
+    /* to make round icon match the rest*/
+    /* padding: 11px; */
+    /* padding-left: 14px; */
+    /* padding-right: 14px; */
 }
 
 .fa-twitter {

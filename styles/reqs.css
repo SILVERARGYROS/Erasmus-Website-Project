@@ -1,0 +1,293 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+  
+body{  
+    background-color: #fff; 
+    /* background-image: url("../media/photos/background.png"); */
+    background-image: -webkit-image-set(scroll);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient(white, rgba(255,153,204,1)); */
+    font-family: 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 11pt;
+    width: 100%;
+    /* color: #ffffff; */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.reqs { /*acts as a container*/
+    background-image: url("../media/photos/background.png");
+    width: 100%;
+    height: 175%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reqs-info {
+    width: 50%;
+}
+
+.reqs-title{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    font-size: 50px;
+    font-weight:bolder;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+.reqs-content {
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:5%;
+    font-size: 20px;
+    font-weight:bolder;
+    vertical-align: baseline;
+}
+
+.reqs-note {
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:10%;
+    font-size: 18px;
+    font-weight:bolder;
+    vertical-align: baseline;
+}
+
+.reqs-table{
+    width: 46%;
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-right: 3%;
+    justify-self: right;
+    text-align: center;
+    border-spacing: 0;
+}
+
+.reqs-table th{
+    /* border: 1px solid black; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 25px;
+    font-weight:bolder;
+    color: #fff;
+    background-color: rgba(160, 60, 252, 0.7);
+    padding: 10px;
+}
+
+.reqs-table td{
+    font-size: 20px;
+    font-weight:bolder;
+    padding: 10px;
+    border: 0;
+    margin: 0;
+}
+
+.reqs-table .unmarked{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.reqs-table .marked{
+    color: #fff;
+    background-color: rgba(160, 60, 252, 0.7);
+}
+
+.reqs-files {
+    width: 100%;
+}
+
+.reqs-files-info{
+    height: 25%;
+    width: 40%;
+    margin-top:2%;
+    margin-right:5%;
+    margin-bottom:15px;
+    margin-left:2.5%;
+    font-size: 18px;
+    font-weight:bolder;
+    display: inline-block;
+}
+
+.reqs-files-links{
+    width: 40%;
+    margin-top:5%;
+    margin-left:3%;
+    margin-right:3%;
+    margin-bottom:15px;
+    font-size: 18px;
+    font-weight:bolder;
+    display: inline-block;
+    background-color: rgba(160, 60, 252, 0.7);
+    border-radius: 30px;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: #fff;
+    line-height: 150%;
+    text-align:center;
+}
+
+.reqs-files-links a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.reqs-files-links a:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+  
+.checker{
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.checker-info{
+    width: 40%;
+    justify-self: left;
+    margin-left:2.5%;
+    margin-right:5%;
+    margin-top:5%;
+    font-size: 20px;
+    font-weight:bolder;
+    vertical-align: baseline;
+}
+
+.checker-platform{
+    width: 50%;
+}
+
+.content {
+    width: 600px;
+    padding: 30px 30px 5px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: -3px -3px 7px #ffffff73,
+    2px 2px 5px rgba(94,104,121,0.288);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content .text {
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: #595959;
+    text-align: center;
+}
+
+.field {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: static;
+}
+
+.field:not(:first-child){
+    margin-top: 30px;
+}
+
+.field label{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.field .input{
+    width: 150px;
+    float: right;
+    height: 75%;
+    padding-left: 10px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    background: #fff;
+    color: #595959;
+    border-radius: px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+    inset -5px -5px 10px #ffffff73;
+}
+
+.input.first-input{
+    margin-left: auto;
+}
+
+.field .radio-field {   
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: static;
+    margin-top: 0;
+}
+
+.radio-field .radio-button{
+    border: 0px;
+    width: 100%;
+    height: 2em;
+}
+
+input[type='radio']{
+    accent-color:rgba(160, 60, 252, 1);
+    margin-right: 15px;
+}
+
+.field .input::placeholder{
+    opacity: 0.5;
+    text-align: left;
+}
+    
+.field .input:focus {
+    box-shadow: inset 1px 1px 2px #BABECC,
+    inset -1px -1px 2px #ffffff73;
+}
+  
+.form-button {
+    margin: 40px 0;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 600;
+    background: #a03cfc;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 2px 2px 5px #BABECC,
+                -5px -5px 10px #ffffff73;
+    transition: 0.3s;
+}
+  
+.form-button:hover {
+    background-color: #683257;
+    transition: 0.3s;
+    cursor: pointer;
+}
+  
+.form-button:focus {    /* for tab accessibitity*/
+    box-shadow: inset 2px 2px 5px #BABECC,
+    inset -5px -5px 10px #ffffff73;
+}
+  
+.form-button:active {    
+    background-color: #683457;
+    color: lightgrey;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    transition: 0.3s;
+}
+  

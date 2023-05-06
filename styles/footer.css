@@ -121,7 +121,6 @@
 .footer-logo{
     text-align: center;
     font-weight: bold;
-    cursor: pointer;
     text-decoration:none;
 }
 
@@ -129,17 +128,18 @@
     text-decoration:none;
     color: white;
     font-size: xx-large;
+    cursor: pointer;
 }
 
 .footer-copyright{
     text-align: center;
     font-weight: bold;
-    cursor: pointer;
     text-decoration:none;
     background-color: #a03cfc;
 }
 
 .footer-copyright a{
     text-decoration:none;
+    cursor: pointer;
     color: white;
 }

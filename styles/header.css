@@ -214,3 +214,6 @@ input[type = "checkbox"]:checked ~ span {
 .sticky + .header-content {
   padding-top: 5.9%; /*sweet spot on pc is 80*/
 }
+
+
+/*    content: "\f0c9"; for mobile menu icon/*

@@ -68,6 +68,7 @@ body{
 }
 
 .welcome2 .content{
+  width: 42.5%;
   margin-left:5%;
   font-size: 25px;
   font-weight:bolder;

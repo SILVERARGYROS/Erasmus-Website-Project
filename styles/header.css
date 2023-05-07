@@ -19,8 +19,12 @@
 }
 
 .header-container .button{
-  position: absolute;
-  justify-content: left;
+	position: absolute;
+	justify-content: left;
+}
+
+.header-container .mobile{
+	display: none;
 }
 
 /*TOP NAVIGATOR STYLE CSS*/
@@ -193,6 +197,117 @@ input[type = "checkbox"]:checked ~ span {
   transform: rotate(220deg);
 }
 
+/* Hide the link that should open and close the topnav on small screens */
+.header-middle .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1220px) {
+	.header-container{
+		height: 60px;
+	}
+
+	.header-middle a {display: none;}
+	/* .header-right a {display: none;} */
+	/* .header label {display: none;} */
+	.header a.icon {
+		float: right;
+		display: block;
+	}
+	/* .header-right .signup{display: flex;} */
+	/* .header-right .login{display: flex;} */
+
+	.header.responsive {position: relative;}
+	.header.responsive a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.header.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+
+	.header-container .mobile{
+		display: block;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.header-container{
+		height: 60px;
+	}
+
+	.header-middle a {display: none;}
+	.language-button-gr{display: none;} 
+	.language-button-en{display: none;} 
+	.header label {display: none;}
+	.header a.icon {
+		float: right;
+		display: block;
+	}
+	/* .header-right .signup{display: flex;} */
+	/* .header-right .login{display: flex;} */
+
+	.header.responsive {position: relative;}
+	.header.responsive a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.header.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+
+	.header-container .mobile{
+		display: block;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.header-container{
+		height: 60px;
+	}
+
+	.header-middle a {display: none;}
+	.header-right a {display: none;}
+	.header label {display: none;}
+	.header a.icon {
+		float: right;
+		display: block;
+	}	
+
+	.header-container{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	/* .header-right .signup{display: flex;} */
+	/* .header-right .login{display: flex;} */
+
+	.header.responsive {position: relative;}
+	.header.responsive a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.header.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+
+	.header-container .mobile{
+		display: block;
+	}
+}
 
 /*Sticky Header CSS code*/
 

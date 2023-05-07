@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <link href="styles/header.css" rel="stylesheet" type="text/css">
+        <link href="styles/footer.css" rel="stylesheet" type="text/css">
+        <link href="styles/application.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="author" content="Αργυρός Κωνσταντίνος">
+        <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8"/>
+        <title>Erasmus Application Page</title>
+    </head>
+    <body>
+
+        <!--Topbar Navigation Code-->
+        <div class="header" id="header">
+            <div class="header-container">
+                <a class="button" href="index.html"><b>Erasmus</b></a>
+
+                <div class="header-middle">
+                    <a href="index.html">Αρχική</a>
+                    <a href="more.html">Περισσότερα</a>
+                    <a href="reqs.html">Προϋποθέσεις</a>
+                    <a href="application.html">Αίτηση</a>
+                </div>
+                <div class="header-right">
+                    <a class="language-button-gr"><img src="media/photos/gr-icon.jpg"></a>
+                    <a class="language-button-en"><img src="media/photos/en-icon.jpg"></a>
+                    <label class="container">
+                        <input id="check" type="checkbox">
+                        <span></span>
+                        <label for="check" class="shadow"></label>
+                    </label>
+                    <a class="signup" href="signup.html">Εγγραφή</a>
+                    <a class="login" href="login.html">Σύνδεση</a>
+                </div>
+            </div>
+        </div>
+        <!--Topbar Navigation Code-->
+        
+        <div class="header-content">
+            <div class="app">
+                <div class="app-info">
+                    <section class="app-title">
+                            <u>Αίτηση</u>
+                    </section>
+                    <section class="app-content">
+                        Για να συμμετέχετε στο φετινό πρόγραμμα εξωτερικών σπουδών Erasmus συμπληρώστε την ακόλουθη φόρμα αίτησης.
+                    </section>
+                    <section class="app-content">
+                        Παρακαλούμε πολύ βεβαιωθείτε πρώτα ότι πληρείτε τις προϋποθέσεις μετακίνησης στην αντίστοιχη σελίδα.
+                        Φόρμες που δεν πληρούν τις απαραίτητες προϋποθέσεις απορρίπτονται αυτόματα.
+                    </section>
+                    <section class="app-content">
+                        Πρέπει επίσης να διαβάσετε και να συμφωνείτε με τους <a href="https://eurep.auth.gr/el/students/studies/requirements">όρους συμμετοχής και μετακίνησης</a>.
+                    </section>
+                </div>
+                    
+                <div class="app-platform">
+                    <div class="content">
+                        <div class="text">
+                            Φόρμα Αίτησης
+                        </div>
+                        <form action="#">
+                            <div class="field">
+                                <label>Όνομα:</label>
+                                <input required="" type="text" class="input">
+                            </div>
+                            <div class="field">
+                                <label>Επώνυμο:</label>
+                                <input required="" type="text" class="input">
+                            </div>
+                            <div class="field">
+                                <label>Αριθμός Μητρώου:</label>
+                                <input required="" type="text" class="input">
+                            </div>
+                            <div class="field">
+                                <label>Ποσοστό «περασμένων» μαθημάτων έως και το προηγούμενο έτος:</label>
+                                <input required="" type="number" min="0" max="100" class="input">
+                            </div>
+                            <div class="field">
+                                <label>Μέσος όρος των «περασμένων» μαθημάτων έως και το προηγούμενο έτος σπουδών:</label>
+                                <input required="" type="number" step="0.01" class="input">
+                            </div>
+                            <div class="field">
+                                <label>Πιστοποιητικό γνώσης της αγγλικής γλώσσας:</label>
+                                <div class="radio-field">
+                                    A1<input required="" name="englishLevel" type="radio" class="radio-button" value="A1">
+                                    A2<input required="" name="englishLevel" type="radio" class="radio-button" value="A2">
+                                    B1<br><input required="" name="englishLevel" type="radio" class="radio-button" value="B1">
+                                    B2<input required="" name="englishLevel" type="radio" class="radio-button" value="B2">
+                                    C1<input required="" name="englishLevel" type="radio" class="radio-button" value="C1">
+                                    C2<input required="" name="englishLevel" type="radio" class="radio-button" value="C2">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="radio-label">Γνώση επιπλέον ξένων γλωσσών:</label>
+                                <div class="radio-field">
+                                    ΟΧΙ<input required="" name="englishLevel" type="radio" class="radio-button" value="no">
+                                    ΝΑΙ<input required="" name="englishLevel" type="radio" class="radio-button" value="yes">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Πανεπιστήμιο - 1η επιλογή:</label>
+                                <select class="input input first-input">
+                                    <option selected value="0"> 
+                                    <option value="1"> Πανεπιστήμιο Βρυξελλών
+                                    <option value="2"> Πανεπιστήμιο Δανίας
+                                    <option value="3"> Πανεπιστήμιο Λουξεμβούργου
+                                    <option value="4"> Πανεπιστήμιο Ελλάδας
+                                    <option value="5"> Πανεπιστήμιο Ελβετίας
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Πανεπιστήμιο - 2η επιλογή:</label>
+                                <select class="input input first-input">
+                                    <option selected value="0"> 
+                                    <option value="1"> Πανεπιστήμιο Βρυξελλών
+                                    <option value="2"> Πανεπιστήμιο Δανίας
+                                    <option value="3"> Πανεπιστήμιο Λουξεμβούργου
+                                    <option value="4"> Πανεπιστήμιο Ελλάδας
+                                    <option value="5"> Πανεπιστήμιο Ελβετίας
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Πανεπιστήμιο - 3η επιλογή:</label>
+                                <select class="input input first-input">
+                                    <option selected value="0"> 
+                                    <option value="1"> Πανεπιστήμιο Βρυξελλών
+                                    <option value="2"> Πανεπιστήμιο Δανίας
+                                    <option value="3"> Πανεπιστήμιο Λουξεμβούργου
+                                    <option value="4"> Πανεπιστήμιο Ελλάδας
+                                    <option value="5"> Πανεπιστήμιο Ελβετίας
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Ποσοστό «περασμένων» μαθημάτων έως και το προηγούμενο έτος:</label>
+                                <input required="" type="file" class="input">
+                            </div>
+                            <div class="field">
+                                <label>Ποσοστό «περασμένων» μαθημάτων έως και το προηγούμενο έτος:</label>
+                                <input required="" type="file" class="input">
+                            </div>
+                            <div class="field">
+                                <label>Ποσοστό «περασμένων» μαθημάτων έως και το προηγούμενο έτος:</label>
+                                <input required="" type="file" class="input" multiple>
+                            </div>
+                            <div class="field">
+                                <label>
+                                    
+                                </label>
+                                <label class="check-container">Αποδοχή των όρων
+                                    <input required type="checkbox" class="" value="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                
+                                
+                            </div>
+                            <button class="form-button">Υποβολή Αίτησης</button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <!--Footer Code-->
+            <div class="footer">
+                <ul class="socials">
+                    <li><a href="https://www.facebook.com/groups/erasmus.youthinaction/?locale=el_GR" class="fa fa-facebook"></a></li>
+                    <li><a href="https://twitter.com/EUErasmusPlus" class="fa fa-twitter"></a></li>
+                    <li><a href="https://www.instagram.com/erasmusplusprojects/?hl=el" class="fa fa-instagram"></a></li>
+                    <li><a href="https://www.youtube.com/@europeanparliament" class="fa fa-youtube"></a></li>
+                    <li><a href="https://www.reddit.com/r/Erasmus/" class="fa fa-reddit"></a></li>
+                    <li><a href="https://www.linkedin.com/company/meterasmusplus/" class="fa fa-linkedin"></a></li>
+                </ul>
+                <section class="footer-logo">
+                    <a href="https://commission.europa.eu/legal-notice_en">ERASMUS</a> 
+                </section>
+                <section class="footer-copyright">
+                    <a href="https://commission.europa.eu/legal-notice_en">Copyright © 2023 Erasmus, Inc.</a> 
+                    <!--to type C press alt + 0 1 6 9 from numpad-->
+                </section>
+            </div>
+            <!--Footer Code-->
+
+        </div>
+        
+    </body>
+    <script src="scripts/stickyHeader.js"></script>     
+</html>

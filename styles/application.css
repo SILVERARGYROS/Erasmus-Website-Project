@@ -1,0 +1,258 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+  
+body{  
+    background-color: #fff; 
+    /* background-image: url("../media/photos/background.png"); */
+    background-image: -webkit-image-set(scroll);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient(white, rgba(255,153,204,1)); */
+    font-family: 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 11pt;
+    width: 100%;
+    /* color: #ffffff; */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.app { /*acts as a container*/
+    background-image: url("../media/photos/background.png");
+    width: 100%;
+    height: 200%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.app-info {
+    width: 40%;
+}
+
+.app-title{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    font-size: 50px;
+    font-weight:bolder;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+.app-content {
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:5%;
+    font-size: 20px;
+    font-weight:bolder;
+    vertical-align: baseline;
+}
+
+.app-platform{
+    width: 50%;
+    margin-top: 5%;
+}
+
+.content {
+    height: 90%;
+    width: 600px;
+    padding: 30px 30px 5px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: -3px -3px 7px #ffffff73,
+    2px 2px 5px rgba(94,104,121,0.288);
+    margin-left: auto;
+}
+
+.content .text {
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: #595959;
+    text-align: center;
+}
+
+.field {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: static;
+}
+
+.field:not(:first-child){
+    margin-top: 30px;
+}
+
+.field label{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 10px;
+    width: 60%;
+}
+
+.field .input{
+    width: 100%;
+    float: right;
+    height: 75%;
+    padding-left: 10px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    background: #fff;
+    color: #595959;
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+    inset -5px -5px 10px #ffffff73;
+}
+
+.input.first-input{
+    margin-left: auto;
+}
+
+.field .radio-field {   
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: static;
+    margin-top: 0;
+}
+
+.radio-field .radio-button{
+    border: 0px;
+    width: 100%;
+    height: 2em;
+}
+
+.radio-label{
+    margin: 0;
+    padding: 0;
+}
+
+input[type='radio']{
+    accent-color:rgba(160, 60, 252, 1);
+    margin-right: 15px;
+    padding: 0;
+}
+
+/* input[type='file']{
+    display: ;
+} */
+
+/*checkmark code */
+
+.check-container{
+    display: block;
+    position: relative;
+    font-size: 22px;
+    user-select: none;
+    padding-left: 35px;
+    margin-bottom: 12px;
+}
+
+.check-container input{
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.check-container:hover input ~ .checkmark {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
+  background-color: #a03cfc;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*checkmark code */
+
+.field .input::placeholder{
+    opacity: 0.5;
+    text-align: left;
+}
+    
+.field .input:focus {
+    box-shadow: inset 1px 1px 2px #BABECC,
+    inset -1px -1px 2px #ffffff73;
+}
+  
+.form-button {
+    margin: 40px 0;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 600;
+    background: #a03cfc;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 2px 2px 5px #BABECC,
+                -5px -5px 10px #ffffff73;
+    transition: 0.3s;
+}
+  
+.form-button:hover {
+    background-color: #683257;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.form-button:focus {    /* for tab accessibitity*/
+    box-shadow: inset 2px 2px 5px #BABECC,
+    inset -5px -5px 10px #ffffff73;
+}
+  
+.form-button:active {    
+    background-color: #683457;
+    color: lightgrey;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    transition: 0.3s;
+}

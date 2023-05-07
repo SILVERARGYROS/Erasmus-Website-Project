@@ -415,10 +415,11 @@ input[type='radio']{
     }
     
     .checker-info{
-        width: 100%;
+        width: 90%;
         margin-left:auto;
         margin-right:auto;
         font-weight:bolder;
+        font-size: medium   ;
         vertical-align: baseline;
     }
     
@@ -506,10 +507,11 @@ input[type='radio']{
     }
     
     .checker-info{
-        width: 100%;
+        width: 90%;
         margin-left:auto;
         margin-right:auto;
         font-weight:bolder;
+        font-size: medium   ;
         vertical-align: baseline;
     }
     
@@ -642,8 +644,8 @@ input[type='radio']{
     .reqs-files-links{
         width: 90%;
         margin-top:5%;
-        margin-left:auto;
-        margin-right:auto;
+        margin-left: 2%;
+        margin-right: 1%;
         margin-bottom:2%;
         font-size: 18px;
         font-weight:bolder;

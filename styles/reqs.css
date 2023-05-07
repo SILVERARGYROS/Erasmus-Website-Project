@@ -154,8 +154,7 @@ body{
 }
 
 .checker-info{
-    width: 40%;
-    justify-self: left;
+    width: 100%;
     margin-left:2.5%;
     margin-right:5%;
     margin-top:5%;
@@ -165,11 +164,11 @@ body{
 }
 
 .checker-platform{
-    width: 50%;
+    width: 100%;
 }
 
 .content {
-    width: 600px;
+    width: 80%;
     padding: 30px 30px 5px;
     background: #fff;
     border-radius: 10px;
@@ -202,6 +201,10 @@ body{
     font-size: 15px;
     font-weight: 600;
     margin-right: 10px;
+}
+
+.field .first-label{
+    margin-right: 30%;
 }
 
 .field .input{
@@ -291,3 +294,367 @@ input[type='radio']{
     transition: 0.3s;
 }
   
+.radio-label{
+    width: 100%;
+}
+
+.last-label-format{
+    display: none;
+}
+
+
+@media screen and (max-width: 1440px) {
+
+    .reqs { /*acts as a container*/
+        height: 200%;
+    }
+
+    .field label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 2px;
+    }
+
+    .checker{
+        display: flex;
+        width: 100%;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+    
+    .checker-info{
+        width: 100%;
+        margin-left:2.5%;
+        margin-right:5%;
+        margin-top:5%;
+        font-size: 20px;
+        font-weight:bolder;
+        vertical-align: baseline;
+    }
+    
+    .checker-platform{
+        width: 100%;
+    }
+
+
+    .field {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        position: static;
+    }
+    
+    .field:not(:first-child){
+        margin-top: 30px;
+    }
+    
+    .field label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+
+    .field .first-label{
+        margin-right: 160px;
+
+    }
+    
+    .field .input{
+        width: 150px;
+        float: right;
+        height: 75%;
+        padding-left: 10px;
+        margin-left: 10px;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        background: #fff;
+        color: #595959;
+        border-radius: px;
+        box-shadow: inset 2px 2px 5px #BABECC,
+        inset -5px -5px 10px #ffffff73;
+    }
+
+    .field .last-radio-field{
+        display: contents;
+        margin-top: 100px;
+    }
+
+    .field .last-label{
+        display: none;
+    }
+    
+    .second-last-field{
+        margin-bottom: 50px;
+    }
+
+    .last-label-format{
+        display:contents;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 1008px) {
+	.reqs { /*acts as a container*/
+        height: 250%;
+    }
+
+    .field label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 2px;
+    }
+
+    .checker{
+        display: contents;
+        width: 100%;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+    
+    .checker-info{
+        width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bolder;
+        vertical-align: baseline;
+    }
+    
+    .checker-platform{
+        width: 100%;
+    }
+
+
+    .field {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        position: static;
+    }
+    
+    .field:not(:first-child){
+        margin-top: 30px;
+    }
+    
+    .field label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+
+    .field .first-label{
+        margin-right: 160px;
+
+    }
+    
+    .field .input{
+        width: 150px;
+        float: right;
+        height: 75%;
+        padding-left: 10px;
+        margin-left: auto;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        background: #fff;
+        color: #595959;
+        border-radius: px;
+        box-shadow: inset 2px 2px 5px #BABECC,
+        inset -5px -5px 10px #ffffff73;
+    }
+
+    .field .last-radio-field{
+        display: contents;
+        margin-top: 100px;
+    }
+
+    .field .last-label{
+        display: none;
+    }
+    
+    .second-last-field{
+        margin-bottom: 50px;
+    }
+
+    .last-label-format{
+        display:contents;
+        font-size: 15px;
+        font-weight: 600;
+    }
+	
+}
+
+@media screen and (max-width: 801px) {
+	.reqs { /*acts as a container*/
+        height: 300%;
+    }
+
+    .field label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 2px;
+    }
+
+    .checker{
+        display: contents;
+        width: 100%;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+    
+    .checker-info{
+        width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+        font-weight:bolder;
+        vertical-align: baseline;
+    }
+    
+    .checker-platform{
+        width: 100%;
+    }
+
+
+    .field {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        position: static;
+    }
+    
+    .field:not(:first-child){
+        margin-top: 30px;
+    }
+    
+    .field label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+
+    .field .first-label{
+        margin-right: 160px;
+
+    }
+    
+    .field .input{
+        width: 150px;
+        float: right;
+        height: 75%;
+        padding-left: 10px;
+        margin-left: auto;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        background: #fff;
+        color: #595959;
+        border-radius: px;
+        box-shadow: inset 2px 2px 5px #BABECC,
+        inset -5px -5px 10px #ffffff73;
+    }
+
+    .field .last-radio-field{
+        display: contents;
+        margin-top: 100px;
+    }
+
+    .field .last-label{
+        display: none;
+    }
+    
+    .second-last-field{
+        margin-bottom: 50px;
+    }
+
+    .last-label-format{
+        display:contents;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .reqs-info {
+        width: 100%;
+    }
+    
+    .reqs-title{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        font-size: 50px;
+        font-weight:bolder;
+        vertical-align: baseline;
+        text-align: center;
+    }
+    
+    .reqs-content {
+        margin-left:5%;
+        margin-right:5%;
+        margin-top:5%;
+        font-size: 20px;
+        font-weight:bolder;
+        vertical-align: baseline;
+    }
+    
+    .reqs-note {
+        margin-left:5%;
+        margin-right:5%;
+        margin-top:10%;
+        font-size: 18px;
+        font-weight:bolder;
+        vertical-align: baseline;
+    }
+    
+    .reqs-table{
+        width: 90%;
+        margin-top: 3%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-self: right;
+        text-align: center;
+        border-spacing: 0;
+    }
+
+    .reqs-files {
+        width: 100%;
+        display:block;
+    }
+    
+    .reqs-files-info{
+        width: 90%;
+        height: 25%;
+        margin-top:2%;
+        margin-right:5%;
+        margin-bottom:15px;
+        margin-left:2.5%;
+        font-size: 18px;
+        font-weight:bolder;
+        display: inline-block;
+    }
+
+    .reqs-files-info section{
+        text-align:center;
+    }
+    
+    .reqs-files-links{
+        width: 90%;
+        margin-top:5%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:2%;
+        font-size: 18px;
+        font-weight:bolder;
+        display: inline-block;
+        background-color: rgba(160, 60, 252, 0.7);
+        border-radius: 30px;
+        padding: 1%;
+        padding-left: 3%;
+        padding-right: 3%;
+        color: #fff;
+        line-height: 150%;
+        text-align:center;
+    }
+}

@@ -20,130 +20,6 @@ body{
   height: 100%;
 }
 
-
-
-.welcome1 .title{
-  font-size: 120px;
-  font-weight: bolder;
-  vertical-align: baseline;
-  text-align: center;
-}
-
-.welcome1 .learn-more-button{
-  padding: 30px;
-  background-color: #a03cfc;
-  border-radius: 60px;
-  color: #ffffff;
-  font-size: medium;
-  transition: 0.5s;
-}
-
-.welcome1 .learn-more-button:hover{
-  background-color: #683257;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.more2{
-  background-image: url("../media/photos/background2.png");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-
-.more2 .title{
-  margin-left: 5%;
-  font-size: 50px;
-  font-weight:bolder;
-  vertical-align: baseline;
-  text-align-last: left;
-}
-
-.more2 .content{
-  width: 42.5%;
-  margin-left:5%;
-  font-size: 25px;
-  font-weight:bolder;
-  vertical-align: baseline;
-  text-align-last: left;
-}
-
-.welcome2 .learn-more-button{
-  padding: 30px;
-  background-color: #a03cfc;
-  border-radius: 60px;
-  color: #ffffff;
-  font-size: medium;
-  transition: 0.5s;
-  }
-
-.welcome2 .learn-more-button:hover{
-  background-color: #683257;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.welcome3{
-  overflow: hidden;
-  background-color: #a03cfc; /*debugging purposes*/
-  width: 100%;
-  height: 80%;
-  display: flex;
-  justify-content: left;
-  padding-bottom: 20%; 
-}
-
-.welcome3_1{
-  background-color: #ffffff;
-  width: 80%;
-  height: 150%;
-}
-
-.welcome3_1 .main_title{
-  color:#000;
-  font-size: x-large;
-  font-weight:bolder;
-  margin-left:5%
-}
-
-.welcome3_1 .main_content{
-  color:#000;
-  font-size: x-large;
-  margin-left:5%
-}
-
-.welcome3 .learn-more-button{
-  padding: 30px;
-  background-color: #a03cfc;
-  border-radius: 60px;
-  color: #ffffff;
-  font-size: medium;
-  font-weight: bolder;
-  transition: 0.5s;
-  }
-
-.welcome3 .learn-more-button:hover{
-  background-color: #683257;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.welcome3_2{
-  background-color: #a03cfc; /*debugging purposes */
-  background-image: url("../media/photos/background3.png");
-  width: 32.5%;
-  height: 150%;
-  background-attachment: fixed;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: contain; 
-  justify-self: right;
-}
-
-
-
-
-
 .more4{
     height: 100%;
     height: 100%;
@@ -175,15 +51,6 @@ body{
     clear: both;
 }
   
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-        display: block;
-        margin-bottom: 10px;
-    }
-}
-  
 /* Style the counter cards */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -191,10 +58,6 @@ body{
     text-align: center;
     background-color: #a03cfc;
     color: white;
-}
-  
-.fa {   
-    
 }
 
 .card-icon{
@@ -268,32 +131,33 @@ body{
 
 .more-video img{
     display: block;
-    width: 500px;
-    height: 250px;
+    width: 60%;
+    height:35%;
     object-fit:fill;
     margin: auto;
+	margin-top: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
 }
 
+/* 
 @media screen and (max-width: 800px) {
     .more-video {
         width: 100%;
     }
 
     .more-info {
-        width: 1000%;
+        width: 100%;
     }
-}
+} */
 
 .more2{
     background-image: url("../media/photos/background2.png");
     width: 100%;
-    height: 100%;
+    height: 150%;
     background-size: cover;
 }
   
-  .more2 .title{
+.more2 .title{
     margin-left: 5%;
     font-size: 50px;
     font-weight:bolder;
@@ -301,11 +165,248 @@ body{
     text-align-last: left;
 }
   
-  .more2 .content{
+.more2 .content{
     width: 42.5%;
     margin-left:5%;
     font-size: 25px;
     font-weight:bolder;
     vertical-align: baseline;
     text-align-last: left;
- }
+}
+
+
+
+@media screen and (max-width: 1440px) {
+	body{
+		height: 250%;
+	}
+
+	.more{
+		height: 50%;
+	}
+
+	.more-title{
+		font-size: 40px;
+	}
+	
+	.more-content {
+		font-size: 20px;
+	}
+	
+
+	.more-video video{
+		margin: 10%;
+		margin-top: 20%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		justify-self: center;
+	}
+
+	.more-video img{
+		display: block;
+		width: 60%;
+		height: 25%;
+		object-fit:fill;
+		margin: auto;
+		margin-top: 10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.more2{
+		background-image: url("../media/photos/background2.png");
+		width: 100%;
+		height: 50%;
+		background-size: cover;
+	}
+
+	.more2 .title{
+		margin-top: 0;
+		margin-left: 5%;
+		font-size: 30px;
+		font-weight: bolder;
+		vertical-align: baseline;
+		text-align-last: left;
+	}
+
+	.more2 .content{
+		width: 40%;
+		margin-left:5%;
+		font-size: 20px;
+		font-weight:bolder;
+		vertical-align: baseline;
+		text-align-last: left;
+	}
+
+	.more4{
+		height: 60%;
+	}
+
+	.column {
+		width: 50%;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+  	.card-icon::before{
+		font-size: 100px;
+		background-color: #a03cfc;
+		border: 0;
+	}
+
+}
+
+@media screen and (max-width: 1008px) {
+	body{
+		height: 250%;
+	}
+
+	.more{
+		height: 50%;
+	}
+
+	.more-title{
+		font-size: 40px;
+	}
+	
+	.more-content {
+		font-size: 20px;
+	}
+
+	
+	
+	
+
+	.more-video video{
+		margin: 10%;
+		margin-top: 20%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		justify-self: center;
+	}
+
+	.more-video img{
+		display: block;
+		width: 60%;
+		height: 25%;
+		object-fit:fill;
+		margin: auto;
+		margin-top: 10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.more2{
+		background-image: url("../media/photos/background2.png");
+		width: 100%;
+		height: 50%;
+		background-size: cover;
+	}
+
+	.more2 .title{
+		margin-top: 0;
+		margin-left: 5%;
+		font-size: 30px;
+		font-weight: bolder;
+		vertical-align: baseline;
+		text-align-last: left;
+	}
+
+	.more2 .content{
+		width: 60%;
+		margin-left:5%;
+		font-size: 20px;
+		font-weight:bolder;
+		vertical-align: baseline;
+		text-align-last: left;
+	}
+
+	.more4{
+		height: 60%;
+	}
+
+	.column {
+		width: 50%;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+  	.card-icon::before{
+		font-size: 100px;
+		background-color: #a03cfc;
+		border: 0;
+	}
+
+	
+}
+
+@media screen and (max-width: 747px) {
+	body{
+		height: 400%;
+	}
+	
+	.more{
+		height: 50%;
+	}
+
+	.more-info {
+		width: 100%;
+		height: 15%;
+	}
+
+	.more-video {
+		width: 100%;
+	}
+
+	.more-title{
+		font-size: 35px;
+	}
+	
+	.more-content {
+		font-size: 15px;
+	}
+
+	.more-video video{
+		width: 80%
+	}
+
+	.more-video img{
+		display: block;
+		width: 80%;
+		height:20%;
+		object-fit:fill;
+		margin: auto;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.more2{
+		background-image: url("../media/photos/background2.png");
+		width: 100%;
+		height: 25%;
+		background-size: cover;
+	}
+
+	.more2 .title{
+		margin-left: 5%;
+		font-size: 30px;
+		font-weight: bolder;
+		vertical-align: baseline;
+		text-align-last: left;
+	}
+
+	.more2 .content{
+		width: 80%;
+		margin-left:5%;
+		font-size: 18px;
+		font-weight:bolder;
+		vertical-align: baseline;
+		text-align-last: left;
+	}
+
+	.column {
+		width: 100%;
+		display: block;
+	}
+  
+	.card-icon::before{
+		font-size: 80px;
+		background-color: #a03cfc;
+		border: 0;
+	}
+}

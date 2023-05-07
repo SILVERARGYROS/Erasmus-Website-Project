@@ -168,15 +168,10 @@ body{
 		padding: 50px 50px 0 50px;
   	}
 
-  .sign-up{
-	font-weight: bolder;
-	font-size: larger;
-  }
-
-  .sign-up a{
-	color:lightblue;
-  }
-
+    .sign-up{
+      color:#000;
+      font-size: larger;
+    }
 }
 
 @media screen and (max-width: 747px) {
@@ -192,12 +187,13 @@ body{
   }
 
   .sign-up{
-	font-weight: bolder;
-	font-size: larger;
+    font-weight: bolder;
+    color:#000;
+    font-size: larger;
   }
 
   .sign-up a{
-	color:lightblue;
+      color:blue;
   }
 
 }

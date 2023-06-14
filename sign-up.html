@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $_SESSION['last_visited'] = "sign-up.html";
+?>
 <!DOCTYPE html>
 <html lang="el">
     <head>
@@ -68,7 +72,7 @@
                             <input required="" type="password" class="input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης">
                         </div>
                         <div class="forgot-pass"></div> <!-- For the gap -->
-                        <input type="submit" class="form-button" value="Εγγραφτείτε"></input>
+                        <input name="sumbit" type="submit" class="form-button" value="Εγγραφτείτε"></input>
                         <div class="sign-up">
                             Είστε ήδη μέλος; 
                             <a href="#">Συνδεθείτε τώρα</a>

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $_SESSION['last_visited'] = "application.html";
+?>
 <!DOCTYPE html>
 <html lang="el">
     <head>
@@ -32,8 +36,17 @@
                         <span></span>
                         <label for="check" class="shadow"></label>
                     </label>
-                    <a class="signup" href="sign-up.html">Εγγραφή</a>
-                    <a class="login" href="login.html">Σύνδεση</a>
+                    <?php
+                        if(isset($_SESSION['username'])){
+                            $username = $_SESSION['username'];
+                            echo '<a class="signup" href="">'.$username.'</a>';
+                            echo '<a class="login" href="scripts/logout.php">logout</a>';
+                        }
+                        else{
+                            echo '<a class="signup" href="sign-up.html">Εγγραφή</a>';
+                            echo '<a class="login" href="login.html">Σύνδεση</a>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>

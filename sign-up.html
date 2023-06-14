@@ -45,30 +45,30 @@
                     <div class="text">
                         Εγγραφή
                     </div>
-                    <form action="#">
+                    <form name="signupForm" action="scripts/sign-up.php" method="post">
                         <div class="field">
-                            <input required="" type="text" class="input" placeholder="Όνομα">
+                            <input name="fname" required="" type="text" class="input" placeholder="Όνομα">
                         </div>
                         <div class="field">
-                            <input required="" type="text" class="input" placeholder="Επίθετο">
+                            <input name="lname" required="" type="text" class="input" placeholder="Επίθετο">
                         </div>
                         <div class="field">
-                            <input required="" type="text" class="input" placeholder="Αριθμός Μητρώου">
+                            <input name="am" required="" type="text" class="input" placeholder="Αριθμός Μητρώου">
                         </div>
                         <div class="field">
-                            <input required="" type="text" class="input" placeholder="E-mail">
+                            <input name="email" required="" type="text" class="input" placeholder="E-mail">
                         </div>
                         <div class="field">
-                            <input required="" type="text" class="input" placeholder="Όνομα Χρήστη">
+                            <input name="username" required="" type="text" class="input" placeholder="Όνομα Χρήστη">
                         </div>
                         <div class="field">
-                            <input required="" type="password" class="input" placeholder="Κωδικός Πρόσβαση">
+                            <input name="password" required="" type="password" class="input" placeholder="Κωδικός Πρόσβαση">
                         </div>
                         <div class="field">
                             <input required="" type="password" class="input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης">
                         </div>
                         <div class="forgot-pass"></div> <!-- For the gap -->
-                        <button class="form-button">Εγγραφτείτε</button>
+                        <input type="submit" class="form-button" value="Εγγραφτείτε"></input>
                         <div class="sign-up">
                             Είστε ήδη μέλος; 
                             <a href="#">Συνδεθείτε τώρα</a>

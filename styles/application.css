@@ -113,6 +113,26 @@ body{
     inset -5px -5px 10px #ffffff73;
 }
 
+/* Someone please teach me about overwrite rules ;-; */
+/* How could i overwrite the above without copying it? */
+/* How to create and use (successfully) an overwrite class ?? */
+.field .disabled-input{ 
+    width: 100%;
+    float: right;
+    height: 75%;
+    padding-left: 10px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    background: #cecaca;
+    color: #595959;
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+    inset -5px -5px 10px #ffffff73;
+}
+
 .input.first-input{
     margin-left: auto;
 }
@@ -127,7 +147,7 @@ body{
 
 .radio-field .radio-button{
     border: 0px;
-    width: 100%;
+    width: 10%;
     height: 2em;
 }
 
@@ -141,6 +161,11 @@ input[type='radio']{
     margin-right: 15px;
     padding: 0;
 }
+
+input[type='radio']:hover{
+    cursor: pointer;
+}
+
 
 /* input[type='file']{
     display: ;

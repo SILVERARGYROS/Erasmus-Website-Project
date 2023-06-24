@@ -5,6 +5,9 @@
 <!DOCTYPE html>
 <html lang="el">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href="styles/index.css" rel="stylesheet" type="text/css">
         <link href="styles/header.css" rel="stylesheet" type="text/css">
         <link href="styles/footer.css" rel="stylesheet" type="text/css">
@@ -39,7 +42,7 @@
                     <?php
                         if(isset($_SESSION['username'])){
                             $username = $_SESSION['username'];
-                            echo '<a class="signup" href="">'.$username.'</a>';
+                            echo '<a class="signup" href="">$username</a>';
                             echo '<a class="login" href="scripts/logout.php">logout</a>';
                         }
                         else{

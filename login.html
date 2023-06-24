@@ -62,7 +62,6 @@
                             <a href="#">Ξεχάσατε τον κωδικό σας;</a>
                         </div>
                         <?php
-                            // var_dump($_SESSION);
                             if(isset($_SESSION["wrongCredentials"])){
                                 echo '<span style="color:red">'.$_SESSION["wrongCredentials"].'</span>';
                             }

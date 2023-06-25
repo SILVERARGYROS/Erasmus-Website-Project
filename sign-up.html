@@ -49,30 +49,39 @@
                     <div class="text">
                         Εγγραφή
                     </div>
-                    <form name="signupForm" action="scripts/sign-up.php" method="post">
+                    <form name="signupForm" id="signupForm" action="scripts/sign-up.php" method="post" oninput="formCheck()">
                         <div class="field">
-                            <input name="fname" required="" type="text" class="input" placeholder="Όνομα">
+                            <input name="fname" id="fname" type="text" class="input" placeholder="Όνομα" required oninput="fnameCheck()">
                         </div>
+                        <span name="fnameSpan" id="fnameSpan" class="field-span"><br></span>
                         <div class="field">
-                            <input name="lname" required="" type="text" class="input" placeholder="Επίθετο">
+                            <input name="lname" id="lname" type="text" class="input" placeholder="Επίθετο" required oninput="lnameCheck()">
                         </div>
+                        <span name="lnameSpan" id="lnameSpan" class="field-span"><br></span>
                         <div class="field">
-                            <input name="am" required="" type="text" class="input" placeholder="Αριθμός Μητρώου">
+                            <input name="am" id="am" type="text" class="input" placeholder="Αριθμός Μητρώου" required oninput="amCheck()">
                         </div>
+                        <span name="amSpan" id="amSpan" class="field-span"><br></span>
                         <div class="field">
-                            <input name="email" required="" type="text" class="input" placeholder="E-mail">
+                            <input name="email" id="email" type="email" class="input" placeholder="E-mail" required oninput="emailCheck()">
                         </div>
+                        <span name="emailSpan" id="emailSpan" class="field-span"><br></span>
                         <div class="field">
-                            <input name="username" required="" type="text" class="input" placeholder="Όνομα Χρήστη">
+                            <input name="username" id="username" type="text" class="input" placeholder="Όνομα Χρήστη" required oninput="usernameCheck()">
                         </div>
+                        <span name="usernameSpan" id="usernameSpan" class="field-span"><br></span>
                         <div class="field">
-                            <input name="password" required="" type="password" class="input" placeholder="Κωδικός Πρόσβαση">
+                            <input name="password" id="password" type="password" class="input" placeholder="Κωδικός Πρόσβαση" required oninput="passwordCheck()">
                         </div>
+                        <span name="passwordSpan" id="passwordSpan" class="field-span"><br></span>
                         <div class="field">
-                            <input required="" type="password" class="input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης">
+                            <input name="confirm" id="confirm" type="password" class="input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης" required oninput="passwordCheck()">
                         </div>
-                        <div class="forgot-pass"></div> <!-- For the gap -->
-                        <input name="sumbit" type="submit" class="form-button" value="Εγγραφτείτε"></input>
+                        <span name="confirmSpan" id="confirmSpan" class="field-span"><br></span>
+
+                         <div name="gap" id="gap" class="forgot-pass"></div> <!--For the gap -->
+
+                        <input name="submit" id="submit" type="submit" class="form-button" value="Εγγραφτείτε"></input>
                         <div class="sign-up">
                             Είστε ήδη μέλος; 
                             <a href="#">Συνδεθείτε τώρα</a>
@@ -103,5 +112,6 @@
         <!--Footer Code-->
         
     </body>
+    <script src="./scripts/sign-upChecks.js"></script>
     <script src="scripts/stickyHeader.js"></script>     
 </html>

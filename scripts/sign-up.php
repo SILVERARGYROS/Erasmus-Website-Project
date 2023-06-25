@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 //connecting to database
 $con = mysqli_connect("localhost:3306","root","");
@@ -43,7 +45,16 @@ $group_id = mysqli_fetch_assoc($result)['id'];
 $result = mysqli_query($con, "INSERT INTO GROUPED (user_id, group_id) 
                               VALUES ($user_id, $group_id)");
 
-mysqli_close($con);
 
+// Logging in
+$_SESSION['username'] = $username;
+$_SESSION['fname'] = $credentials['fname'];
+$_SESSION['lname'] = $credentials['lname'];
+$_SESSION['am'] = $credentials['am'];
+$_SESSION['email'] = $credentials['email'];
+
+
+unset($_SESSION['wrongCredentials']);
+mysqli_close($con);
 header("location: ../index.html");
 ?>

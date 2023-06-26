@@ -74,6 +74,10 @@
                     <section class="app-content">
                         Πρέπει επίσης να διαβάσετε και να συμφωνείτε με τους <a href="https://eurep.auth.gr/el/students/studies/requirements">όρους συμμετοχής και μετακίνησης</a>.
                     </section>
+                    <section name="deadlineInfo" id="deadlineInfo" class="app-content">
+                        Προθεσμία Υποβολής: Ημερομηνία
+                    </section>
+                    <section name="timeRemaining" id="timeRemaining" class="app-content">(Απομένει: Υπόλοιπος χρόνος)</section>
                 </div>
                     
                 <div class="app-platform">
@@ -81,7 +85,7 @@
                         <div class="text">
                             Φόρμα Αίτησης
                         </div>
-                        <form name="appForm" action="./scripts/application.php" method="POST" enctype="multipart/form-data">
+                        <form name="appForm" id="appForm" action="./scripts/application.php" method="POST" enctype="multipart/form-data" oninput="formCheck()">
                             <div class="field">
                                 <label>Όνομα:</label>
                                 <input name="fname" type="text" class="disabled-input" value="<?php echo $fname; ?>" readonly required>
@@ -96,68 +100,68 @@
                             </div>
                             <div class="field">
                                 <label>Ποσοστό «περασμένων» μαθημάτων έως και το προηγούμενο έτος:</label>
-                                <input name="percentage" type="number" min="0" max="100" class="input" required>
+                                <input name="percentage" id="percentage" type="number" min="0" max="100" class="input" required oninput="percentageCheck()">
                             </div>
                             <div class="field">
                                 <label>Μέσος όρος των «περασμένων» μαθημάτων έως και το προηγούμενο έτος σπουδών:</label>
-                                <input name="average" type="number" step="0.01" class="input" required>
+                                <input name="average" id="average" type="number" step="0.01" class="input" required oninput="averageCheck()">
                             </div>
                             <div class="field">
                                 <label>Πιστοποιητικό γνώσης της αγγλικής γλώσσας:</label>
                                 <div class="radio-field">
-                                    A1<input name="english_level" type="radio" class="radio-button" value="A1">
-                                    A2<input name="english_level" type="radio" class="radio-button" value="A2">
-                                    B1<br><input name="english_level" type="radio" class="radio-button" value="B1">
-                                    B2<input name="english_level" type="radio" class="radio-button" value="B2">
-                                    C1<input name="english_level" type="radio" class="radio-button" value="C1">
-                                    C2<input name="english_level" type="radio" class="radio-button" value="C2">
+                                    A1<input name="english_level" id="english_level" type="radio" class="radio-button" value="A1" onclick="english_levelCheck()">
+                                    A2<input name="english_level" id="english_level" type="radio" class="radio-button" value="A2" onclick="english_levelCheck()">
+                                    B1<br><input name="english_level" id="english_level" type="radio" class="radio-button" value="B1" onclick="english_levelCheck()">
+                                    B2<input name="english_level" id="english_level" type="radio" class="radio-button" value="B2" onclick="english_levelCheck()">
+                                    C1<input name="english_level" id="english_level" type="radio" class="radio-button" value="C1" onclick="english_levelCheck()">
+                                    C2<input name="english_level" id="english_level" type="radio" class="radio-button" value="C2" onclick="english_levelCheck()">
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="radio-label">Γνώση επιπλέον ξένων γλωσσών:</label>
                                 <div class="radio-field">
-                                    ΟΧΙ<input name="extra_languages" type="radio" class="radio-button" value="no">
-                                    ΝΑΙ<input name="extra_languages" type="radio" class="radio-button" value="yes">
+                                    ΟΧΙ<input name="extra_languages" id="extra_languages" type="radio" class="radio-button" value="no" onclick="extra_languagesCheck()">
+                                    ΝΑΙ<input name="extra_languages" id="extra_languages" type="radio" class="radio-button" value="yes" onclick="extra_languagesCheck()">
                                 </div>
                             </div>
                             <div class="field">
                                 <label>Πανεπιστήμιο - 1η επιλογή:</label>
-                                <select name="uni1" class="input input first-input" required>
-                                    <option selected value=""></option>
+                                <select name="uni1" id="uni1"  class="input input first-input" required onclick="uni1Check()">
+                                    <option selected value="no selection"></option>
                                     <?php include "./scripts/universityList.php"; ?>
                                 </select>
                             </div>
                             <div class="field">
                                 <label>Πανεπιστήμιο - 2η επιλογή:</label>
-                                <select name="uni2" class="input input first-input">
-                                    <option selected value=""></option>
+                                <select name="uni2" id="uni2" class="input first-input">
+                                    <option selected value="no selection"></option>
                                     <?php include "./scripts/universityList.php"; ?>
                                 </select>
                             </div>
                             <div class="field">
                                 <label>Πανεπιστήμιο - 3η επιλογή:</label>
-                                <select name="uni3" class="input input first-input">
-                                    <option selected value=""></option> 
+                                <select name="uni3" id="uni3" class="input first-input">
+                                    <option selected value="no selection"></option> 
                                     <?php include "./scripts/universityList.php"; ?>
                                 </select>
                             </div>
                             <div class="field">
                                 <label>Αρχείο αναλυτικής βαθμολογίας:</label>
-                                <input name="grade_file" type="file" class="input" required>
+                                <input name="grade_file"id="grade_file" type="file" class="input" required onclick="grade_fileCheck()">
                             </div>
                             <div class="field">
                                 <label>Αρχείο πτυχίου γνώσης Αγγλικών:</label>
-                                <input name="english_file" type="file" class="input" required>
+                                <input name="english_file" id="english_file" type="file" class="input" required onclick="english_fileCheck()">
                             </div>
                             <div class="field">
                                 <label>Αρχεία πτυχίων γνώσεις επιπλέον γλωσσών:</label>
-                                <input name="extra_language_files[]" type="file" class="input" multiple>
+                                <input name="extra_language_files[]" id="extra_language_files[]" type="file" class="input" multiple>
                             </div>
                             <div class="field">
                                 <label></label> <!-- empty label to leave space next to the checkbox -->
                                 <label class="check-container">Αποδοχή των <a href="https://eurep.auth.gr/el/students/studies/requirements"></a>όρων</a>
-                                    <input name="checkbox" type="checkbox" class="" value="checked" required>
-                                    <span class="checkmark"></span>
+                                    <input name="checkbox" id="checkbox" type="checkbox" class="" value="" required onclick="checkboxCheck()">
+                                    <span name="checkmark" id="checkmark" class="checkmark"></span>
                                 </label>
                             </div>
                             <?php
@@ -166,7 +170,7 @@
                                     unset($_SESSION['application']);
                                 }
                             ?>
-                            <input name="submit" type="submit" value="Υποβολή Αίτησης" class="form-button"></input>
+                            <input name="submit" id="submit" type="submit" value="Υποβολή Αίτησης" class="form-button-disabled" disabled></input>
                         </form>
                     </div>
                 </div>
@@ -196,5 +200,6 @@
         </div>
         
     </body>
+    <script src="./scripts/applicationChecks.js"></script>
     <script src="scripts/stickyHeader.js"></script>     
 </html>

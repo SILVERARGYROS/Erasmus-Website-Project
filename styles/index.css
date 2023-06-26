@@ -8,7 +8,7 @@ body{
   background-color: #fff; 
   /* background-image: url("../media/photos/background.png"); */
   background-image: -webkit-image-set(scroll);
-  background-size: contain;
+  background-size: fit;
   background-repeat: no-repeat;
   /* background-image: linear-gradient(white, rgba(255,153,204,1)); */
   font-family: 'Inter', 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -28,21 +28,27 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  justify-content: left;
 }
 
 .welcome1 .title{
-  font-size: 120px;
-  font-weight: bolder;
+  margin-left: 5%;
+  padding-top: 120px;
+  width: 50%;
+  font-size: 70px;
+  font-weight: 600;
   vertical-align: baseline;
-  text-align: center;
+  text-align: left;
+  color: #B33EC6;
 }
 
 .welcome1 .learn-more-button{
-  padding: 30px;
-  background-color: #a03cfc;
+  padding: 25px 40px;
+  background-color: #B33EC6;
   border-radius: 60px;
   color: #ffffff;
   font-size: medium;
+  font-weight: 500;
   transition: 0.5s;
 }
 
@@ -77,11 +83,12 @@ body{
 }
 
 .welcome2 .learn-more-button{
-  padding: 30px;
-  background-color: #a03cfc;
+  padding: 25px 40px;
+  background-color: #B33EC6;
   border-radius: 60px;
   color: #ffffff;
   font-size: medium;
+  font-weight: 500;
   transition: 0.5s;
   }
 
@@ -108,8 +115,8 @@ body{
 }
 
 .welcome3_1 .main_title{
-  color:#000;
-  font-size: x-large;
+  color:#B33EC6;
+  font-size: xx-large;
   font-weight:bolder;
   margin-left:5%
 }
@@ -121,13 +128,13 @@ body{
 }
 
 .welcome3 .learn-more-button{
-  padding: 30px;
-  background-color: #a03cfc;
-  border-radius: 60px;
-  color: #ffffff;
-  font-size: medium;
-  font-weight: bolder;
-  transition: 0.5s;
+	padding: 25px 40px;
+	background-color: #B33EC6;
+	border-radius: 60px;
+	color: #ffffff;
+	font-size: medium;
+	font-weight: 500;
+	transition: 0.5s;
   }
 
 .welcome3 .learn-more-button:hover{
@@ -178,8 +185,7 @@ body{
 	}
 
 	.welcome3_1 .main_title{
-		color:#000;
-		font-size: x-large;
+		font-size: 90;
 		font-weight:bolder;
 		margin-left:5%;
 		margin-top:5%;
@@ -193,8 +199,7 @@ body{
 	}
   
   	.welcome3_1 .learn-more-button{
-		padding: 30px;
-		background-color: #a03cfc;
+		padding: 25px 40px;
 		border-radius: 60px;
 		color: #ffffff;
 		font-size: medium;
@@ -248,8 +253,7 @@ body{
 	}
   
   	.welcome3_1 .learn-more-button{
-		padding: 30px;
-		background-color: #a03cfc;
+		padding: 25px 40px;
 		border-radius: 60px;
 		color: #ffffff;
 		font-size: medium;
@@ -297,7 +301,6 @@ body{
 	}
 
 	.welcome3_1 .main_title{
-		color:#000;
 		font-size: x-large;
 		font-weight:bolder;
 		margin-left:5%;
@@ -305,7 +308,6 @@ body{
 	}
   
 	.welcome3_1 .main_content{
-		color:#000;
 		font-size: large;
 		margin-left:5%;
 		margin-bottom: 5%;
@@ -313,9 +315,7 @@ body{
   
   	.welcome3_1 .learn-more-button{
 		padding: 30px;
-		background-color: #a03cfc;
 		border-radius: 60px;
-		color: #ffffff;
 		font-size: medium;
 		font-weight: bolder;
 		transition: 0.5s;
@@ -360,7 +360,6 @@ body{
 	}
 
 	.welcome3_1 .main_title{
-		color:#000;
 		font-size: x-large;
 		font-weight: bolder;
 		margin-left: 5%;
@@ -368,7 +367,6 @@ body{
 	}
   
 	.welcome3_1 .main_content{
-		color:#000;
 		font-size: large;
 		margin-left: 5%;
 		margin-bottom: 5%;
@@ -376,9 +374,7 @@ body{
   
   	.welcome3_1 .learn-more-button{
 		padding: 30px;
-		background-color: #a03cfc;
 		border-radius: 60px;
-		color: #ffffff;
 		font-size: medium;
 		font-weight: bolder;
 		transition: 0.5s;
@@ -423,7 +419,6 @@ body{
 	}
 
 	.welcome3_1 .main_title{
-		color:#000;
 		font-size: x-large;
 		font-weight: bolder;
 		margin-left: 5%;
@@ -431,7 +426,6 @@ body{
 	}
   
 	.welcome3_1 .main_content{
-		color:#000;
 		font-size: large;
 		margin-left: 5%;
 		margin-bottom: 5%;
@@ -439,9 +433,7 @@ body{
   
   	.welcome3_1 .learn-more-button{
 		padding: 30px;
-		background-color: #a03cfc;
 		border-radius: 60px;
-		color: #ffffff;
 		font-size: medium;
 		font-weight: bolder;
 		transition: 0.5s;

@@ -11,7 +11,7 @@ body{
   background-size: contain;
   background-repeat: no-repeat;
   /* background-image: linear-gradient(white, rgba(255,153,204,1)); */
-  font-family: 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Inter', 'Century Gothic' ,'Didact Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 11pt;
   width: 100%;
   /* color: #ffffff; */

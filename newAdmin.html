@@ -1,0 +1,101 @@
+<?php
+    session_start();
+    $_SESSION['last_visited'] = "sign-up.html";
+?>
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <link href="styles/header.css" rel="stylesheet" type="text/css">
+        <link href="styles/footer.css" rel="stylesheet" type="text/css">
+        <link href="styles/newAdmin.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="author" content="Αργυρός Κωνσταντίνος">
+        <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8"/>
+        <title>Erasmus Sign Up Page</title>
+    </head>
+    <body>
+
+        <!--Topbar Navigation Code-->
+        <div class="header" id="header">
+            <div class="header-container">
+                <a class="button" href="index.html"><b>Erasmus</b></a>
+
+                <div class="header-middle">
+                    <a href="index.html">Αρχική</a>
+                    <a href="more.html">Περισσότερα</a>
+                    <a href="reqs.html">Προϋποθέσεις</a>
+                    <a href="application.html">Αίτηση</a>
+                </div>
+                <div class="header-right">
+                    <a class="language-button-gr"><img src="media/photos/gr-icon.jpg"></a>
+                    <a class="language-button-en"><img src="media/photos/en-icon.jpg"></a>
+                    <label class="container">
+                        <input id="check" type="checkbox">
+                        <span></span>
+                        <label for="check" class="shadow"></label>
+                    </label>
+                    <a class="signup" href="sign-up.html">Εγγραφή</a>
+                    <a class="login" href="login.html">Σύνδεση</a>
+                </div>
+            </div>
+        </div>
+        <!--Topbar Navigation Code-->
+        
+        <div class="header-content">
+            <div class="welcome1">
+                <div class="content">
+                    <div class="text">
+                        Δημιουργία Νέου Διαχειριστή
+                    </div>
+                    <form name="signupForm" id="signupForm" action="scripts/newAdmin.php" method="post" oninput="formCheck()">
+                        <div class="field">
+                            <input name="fname" id="fname" type="text" class="input" placeholder="Όνομα" required oninput="fnameCheck()">
+                        </div>
+                        <span name="fnameSpan" id="fnameSpan" class="field-span"><br></span>
+                        <div class="field">
+                            <input name="lname" id="lname" type="text" class="input" placeholder="Επίθετο" required oninput="lnameCheck()">
+                        </div>
+                        <span name="lnameSpan" id="lnameSpan" class="field-span"><br></span>
+                        <div class="field">
+                            <input name="email" id="email" type="email" class="input" placeholder="E-mail" required oninput="emailCheck()">
+                        </div>
+                        <span name="emailSpan" id="emailSpan" class="field-span"><br></span>
+                        <div class="field">
+                            <input name="username" id="username" type="text" class="input" placeholder="Όνομα Χρήστη" required oninput="usernameCheck()">
+                        </div>
+                        <span name="usernameSpan" id="usernameSpan" class="field-span"><br></span>
+
+                         <div name="gap" id="gap" class="forgot-pass"></div> <!--For the gap -->
+
+                        <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Δημιουργία Διαχειριστή" disabled></input>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer Code-->
+        <div class="footer">
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/groups/erasmus.youthinaction/?locale=el_GR" class="fa fa-facebook"></a></li>
+                <li><a href="https://twitter.com/EUErasmusPlus" class="fa fa-twitter"></a></li>
+                <li><a href="https://www.instagram.com/erasmusplusprojects/?hl=el" class="fa fa-instagram"></a></li>
+                <li><a href="https://www.youtube.com/@europeanparliament" class="fa fa-youtube"></a></li>
+                <li><a href="https://www.reddit.com/r/Erasmus/" class="fa fa-reddit"></a></li>
+                <li><a href="https://www.linkedin.com/company/meterasmusplus/" class="fa fa-linkedin"></a></li>
+            </ul>
+            <section class="footer-logo">
+                <a href="https://commission.europa.eu/legal-notice_en">ERASMUS</a> 
+            </section>
+            <section class="footer-copyright">
+                <a href="https://commission.europa.eu/legal-notice_en">Copyright © 2023 Erasmus, Inc.</a> 
+                <!--to type C press alt + 0 1 6 9 from numpad-->
+            </section>
+        </div>
+        <!--Footer Code-->
+        
+    </body>
+    <script src="./scripts/newAdminChecks.js"></script>
+    <script src="scripts/stickyHeader.js"></script>     
+</html>

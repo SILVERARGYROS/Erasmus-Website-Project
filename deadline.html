@@ -1,19 +1,19 @@
 <?php
     session_start();
-    $_SESSION['last_visited'] = "sign-up.html";
+    $_SESSION['last_visited'] = "deadline.html";
 ?>
 <!DOCTYPE html>
 <html lang="el">
     <head>
         <link href="styles/header.css" rel="stylesheet" type="text/css">
         <link href="styles/footer.css" rel="stylesheet" type="text/css">
-        <link href="styles/sign-up.css" rel="stylesheet" type="text/css">
+        <link href="styles/deadline.css" rel="stylesheet" type="text/css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <meta name="author" content="Αργυρός Κωνσταντίνος">
         <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8"/>
-        <title>Erasmus Sign Up Page</title>
+        <title>Erasmus Deadline Page</title>
     </head>
     <body>
 
@@ -47,45 +47,22 @@
             <div class="welcome1">
                 <div class="content">
                     <div class="text">
-                        Εγγραφή
+                        Περίοδος Υποβολής
                     </div>
-                    <form name="signupForm" id="signupForm" action="scripts/sign-up.php" method="post" oninput="formCheck()">
+                    <form name="signupForm" id="signupForm" action="scripts/deadline.php" method="post" oninput="formCheck()">
+                        <label class="field-label">&nbsp;Ημερομηνία Έναρξης</label>
                         <div class="field">
-                            <input name="fname" id="fname" type="text" class="input" placeholder="Όνομα" required oninput="fnameCheck()">
+                            <input name="date_start" id="date_start" type="date" class="input" required oninput="date_startCheck()">
                         </div>
-                        <span name="fnameSpan" id="fnameSpan" class="field-span"><br></span>
+                        <span name="date_startSpan" id="date_startSpan" class="field-span"><br></span>
+                        
+                        <label class="field-label">&nbsp;Ημερομηνία Λήξης</label>
                         <div class="field">
-                            <input name="lname" id="lname" type="text" class="input" placeholder="Επίθετο" required oninput="lnameCheck()">
+                            <input name="date_end" id="date_end" type="date" class="input" required oninput="date_endCheck()">
                         </div>
-                        <span name="lnameSpan" id="lnameSpan" class="field-span"><br></span>
-                        <div class="field">
-                            <input name="am" id="am" type="text" class="input" placeholder="Αριθμός Μητρώου" required oninput="amCheck()">
-                        </div>
-                        <span name="amSpan" id="amSpan" class="field-span"><br></span>
-                        <div class="field">
-                            <input name="email" id="email" type="email" class="input" placeholder="E-mail" required oninput="emailCheck()">
-                        </div>
-                        <span name="emailSpan" id="emailSpan" class="field-span"><br></span>
-                        <div class="field">
-                            <input name="username" id="username" type="text" class="input" placeholder="Όνομα Χρήστη" required oninput="usernameCheck()">
-                        </div>
-                        <span name="usernameSpan" id="usernameSpan" class="field-span"><br></span>
-                        <div class="field">
-                            <input name="password" id="password" type="password" class="input" placeholder="Κωδικός Πρόσβαση" required oninput="passwordCheck()">
-                        </div>
-                        <span name="passwordSpan" id="passwordSpan" class="field-span"><br></span>
-                        <div class="field">
-                            <input name="confirm" id="confirm" type="password" class="input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης" required oninput="passwordCheck()">
-                        </div>
-                        <span name="confirmSpan" id="confirmSpan" class="field-span"><br></span>
+                        <span name="date_endSpan" id="date_endSpan" class="field-span"><br></span>
 
-                         <div name="gap" id="gap" class="forgot-pass"></div> <!--For the gap -->
-
-                        <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Εγγραφτείτε" disabled></input>
-                        <div class="sign-up">
-                            Είστε ήδη μέλος; 
-                            <a href="#">Συνδεθείτε τώρα</a>
-                        </div>
+                        <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Ορισμός Περιόδου" disabled></input>
                     </form>
                 </div>
             </div>
@@ -112,6 +89,6 @@
         <!--Footer Code-->
         
     </body>
-    <script src="./scripts/sign-upChecks.js"></script>
+    <script src="./scripts/deadlineChecks.js"></script>
     <script src="scripts/stickyHeader.js"></script>     
 </html>

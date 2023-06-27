@@ -16,7 +16,7 @@ body{
     /* color: #ffffff; */
     margin: 0;
     padding: 0;
-    height: 115%;
+    height: 100%;
 }
 
 .welcome1 {
@@ -33,12 +33,13 @@ body{
   
 .content {
     width: 25%;
+    height: 45%;
     padding: 40px 30px;
     background: #fff;
     border-radius: 10px;
     box-shadow: -3px -3px 7px #ffffff73,
     2px 2px 5px rgba(94,104,121,0.288);
-    margin-top: 2%;  
+    margin-top: 5%;  
     margin-bottom: 2%;  
 }
   

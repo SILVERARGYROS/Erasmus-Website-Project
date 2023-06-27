@@ -1,0 +1,166 @@
+<?php
+    session_start();
+    $_SESSION['last_visited'] = "index.html";
+?>
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="styles/profile.css" rel="stylesheet" type="text/css">
+        <link href="styles/header.css" rel="stylesheet" type="text/css">
+        <link href="styles/footer.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="author" content="Αργυρός Κωνσταντίνος">
+        <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8"/>
+        <title>Erasmus Profile Page</title>
+    </head>
+    <body>
+
+        <!--Topbar Navigation Code-->
+        <div class="header" id="header">
+            <div class="header-container">
+                <a class="logo" href="index.html"><img src="./media/photos/logo-erasmus.png"></a>
+
+                <div class="header-middle">
+                    <a href="index.html">Αρχική</a>
+                    <a href="more.html">Περισσότερα</a>
+                    <a href="reqs.html">Προϋποθέσεις</a>
+                    <a href="application.html">Αίτηση</a>
+                </div>
+                <div class="header-right">
+                    <div class="seperator"></div>
+                    <?php
+                        if(isset($_SESSION['username'])){
+                            $username = $_SESSION['username'];
+                            echo '<a class="signup" href="">'.$username.'</a>';
+                            echo '<a class="login" href="scripts/logout.php">logout</a>';
+                        }
+                        else{
+                            echo '<a class="signup" href="sign-up.html">Εγγραφή</a>';
+                            echo '<a class="login" href="login.html">Σύνδεση</a>';
+                        }
+                    ?>
+                    <a class="language-button-gr"><img src="media/photos/gr-icon.jpg"></a>
+                    <a class="language-button-en"><img src="media/photos/en-icon.jpg"></a>
+                    <label class="container">
+                        <input id="check" type="checkbox">
+                        <span></span>
+                        <label for="check" class="shadow"></label>
+                    </label>
+                    
+                </div>
+            </div>
+        </div>
+        <!--Topbar Navigation Code-->
+        
+        <div class="header-content">
+            <div class="welcome1">
+                <div class="accountpage">
+                    <div class="bottomframe">
+                        <a class="learn-more-button stroke">Αλλαγή Κωδικού</a>
+                        <a class="learn-more-button stroke">Επεξεργασία Στοιχείων</a>
+                        <a class="learn-more-button">Αποσύνδεση</a>
+                    </div>
+                    <div class="forminfo">
+                        <p class="title1">Κατάσταση Αίτησης</p>
+                        <p class="formstatus">Η αίτησή σας δεν έχει εγκριθεί ακόμα.</p>
+                      <a class="learn-more-button stroke form">Επεξεργασία Αίτησης</a>
+                    </div>
+                    <div class="account">
+                      <div class="email">thisratio@gmail.com</div>
+                      <div class="username">silverargyros</div>
+                      <div class="name">Silver Argyros</div>
+                      <img class="pfp" src="./media/photos/pfp.png" />
+                      <div class="title1">Ο Λογαριασμός μου</div>
+                    </div>
+                  </div>
+                  
+            </div>
+            <!-- <div class="welcome2">
+                <section class="title">
+                    <br>
+                    Τι είναι το Erasmus;
+                </section>
+                <section class="content">
+                    <br>
+                    <br>
+                    Το Erasmus είναι το πρόγραμμα της ΕΕ για τη στήριξη
+                    της εκπαίδευσης, της κατάρτισης, της νεολαίας
+                    και του αθλητισμού στην Ευρώπη.
+                    <br>
+                    <br>
+                    Δίνει την δυνατότητα στους πιο φιλόδοξους φοιτητές
+                    να κυνηγήσουν τους στόχους τους και νεολαίας
+                    διευρύνουν τις γνώσεις τους σε παγκόσμιο επίπεδο.<br>
+                    <br>
+                    <br>
+                    <a class="learn-more-button">Μάθετε περισσότερα</a>
+                </section>
+            </div>
+            <div class="welcome3"> 
+                <div class="welcome3_1"> 
+                    <section class="main_title">
+                        <br>
+                        <br>
+                        ΠΡΟΥΠΟΘΕΣΕΙΣ
+                    </section>
+                    <section class="main_content">
+                        <br>
+                        Το πρόγραμμα Erasmus είναι για τους πιο φιλόδοξους και ανταγωνιστικούς <br> 
+                        φοιτητές από όλο το κόσμο, προσφέροντάς τους μοναδικές εμπειρίες,<br>
+                        γνώσεις, γνωριμίες και κίνητρο για να αναπτυχθούν πλήρως στον τομέα τους.<br>
+                        <br>
+                        Ενημερωθείτε για τις προΰποθέσεις δήλωσης αίτησης.<br>
+                        <br>
+                        <br>
+                        <a class="learn-more-button">Προϋποθέσεις Συμμετοχής</a>
+                    </section>
+                    <section class="main_title">
+                        <br>
+                        <br>
+                        <br>
+                        ΑΙΤΗΣΕΙΣ
+                    </section>
+                    <section class="main_content">
+                        <br>
+                        Πάνω από 30.000 αιτήσεις από μαθητές παγκοσμίως κάθε χρόνο. Αμέτρητες<br> 
+                        επιλογές χωρών, σπουδών, κλάδων, ομοσπονδιών και ερευνητικών έργων.<br>
+                        Εκατοντάδες συνεργασίες και χορηγίες για κάθε επιστημονικό τομέα.<br>
+                        <br>
+                        Δηλώστε συμμετοχή για να λάβετε μέρος στις κορυφαιότερες ακαδημαϊκές <br>
+                        εκδρομές του κόσμου.<br>
+                        <br>
+                        <br>
+                        <a class="learn-more-button">Δήλωση Συμμετοχής</a>
+                    </section>
+                </div> 
+                <div class="welcome3_2"></div>
+            </div>  -->
+
+            <!--Footer Code-->
+            <div class="footer">
+                <ul class="socials">
+                    <li><a href="https://www.facebook.com/groups/erasmus.youthinaction/?locale=el_GR" class="fa fa-facebook"></a></li>
+                    <li><a href="https://twitter.com/EUErasmusPlus" class="fa fa-twitter"></a></li>
+                    <li><a href="https://www.instagram.com/erasmusplusprojects/?hl=el" class="fa fa-instagram"></a></li>
+                    <li><a href="https://www.youtube.com/@europeanparliament" class="fa fa-youtube"></a></li>
+                    <li><a href="https://www.reddit.com/r/Erasmus/" class="fa fa-reddit"></a></li>
+                    <li><a href="https://www.linkedin.com/company/meterasmusplus/" class="fa fa-linkedin"></a></li>
+                </ul>
+                <section class="footer-logo">
+                    <a href="https://commission.europa.eu/legal-notice_en">ERASMUS</a> 
+                </section>
+                <section class="footer-copyright">
+                    <a href="https://commission.europa.eu/legal-notice_en">Copyright © 2023 Erasmus, Inc.</a> 
+                    <!--to type C press alt + 0 1 6 9 from numpad-->
+                </section>
+            </div>
+            <!--Footer Code-->
+        </div>
+    </body>
+    <script src="scripts/stickyHeader.js"></script>     
+</html>

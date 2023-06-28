@@ -1,9 +1,13 @@
 <?php
-    $con = mysqli_connect("localhost:3306", "root", "");
-    if(!$con){
-        die ('Could not connect: '.mysqli_error($con));
+    require "credentials.php";
+
+    // Connecting to database
+    $con = mysqli_connect($host,$user,$password);
+    if (!$con){
+        echo "problem in the connection"/* .mysqli_error() */;
+        die;
     }
-    mysqli_select_db($con, "ErasmApp");
+    mysqli_select_db($con, $db);
 
     // Getting deadline date data from server
     $result = mysqli_query($con, "SELECT * 

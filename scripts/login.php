@@ -1,23 +1,27 @@
 <?php
     session_start();
-    //connecting to database
-    $con = mysqli_connect("localhost:3306","root","");
+    require "credentials.php";
+
+
+    // Connecting to database
+    $con = mysqli_connect($host,$user,$password);
     if (!$con){
-        echo "problem in the connection".mysqli_error();
+        echo "problem in the connection"/* .mysqli_error() */;
         die;
     }
-    mysqli_select_db($con, "ErasmApp");
+    mysqli_select_db($con, $db);
 
     // Form data
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Adding user to database
-    // Relating user to group
+    // Finding user credentials in database
     $result = mysqli_query($con, "SELECT *
-                                  FROM USERS
-                                  WHERE username = '$username'
-                                  AND password = '$password'");
+                                  FROM USERS, GROUPED, USER_GROUPS
+                                  WHERE USERS.id = GROUPED.user_id
+                                  AND USER_GROUPS.id = GROUPED.group_id
+                                  AND username = '$username'
+                                  AND password = '$password';");
 
 
     if(mysqli_num_rows($result) < 1){
@@ -27,12 +31,29 @@
         die;
     }
 
+    // Logging in
     $credentials = mysqli_fetch_assoc($result);
     $_SESSION['username'] = $username;
+    $_SESSION['id'] = $credentials['id'];
     $_SESSION['fname'] = $credentials['fname'];
     $_SESSION['lname'] = $credentials['lname'];
     $_SESSION['am'] = $credentials['am'];
     $_SESSION['email'] = $credentials['email'];
+    $_SESSION['group_type'] = $credentials['group_type'];
+
+
+    $user_id = $credentials['id'];
+    $result = mysqli_query($con, "SELECT *
+    FROM APPLIED
+    WHERE user_id = '$user_id';");
+
+    if(mysqli_num_rows($result) < 1){
+        $_SESSION['submitted'] = false;
+    }
+    else{
+        $_SESSION['submitted'] = true;
+    }
+
 
     unset($_SESSION['wrongCredentials']);
     mysqli_close($con);

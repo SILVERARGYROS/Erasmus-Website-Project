@@ -49,7 +49,7 @@
                     <div class="text">
                         Περίοδος Υποβολής
                     </div>
-                    <form name="signupForm" id="signupForm" action="scripts/deadline.php" method="post" oninput="formCheck()">
+                    <form name="deadlineForm" id="deadlineForm" action="scripts/deadline.php" method="post" oninput="formCheck()">
                         <label class="field-label">&nbsp;Ημερομηνία Έναρξης</label>
                         <div class="field">
                             <input name="date_start" id="date_start" type="date" class="input" required oninput="date_startCheck()">
@@ -61,7 +61,12 @@
                             <input name="date_end" id="date_end" type="date" class="input" required oninput="date_endCheck()">
                         </div>
                         <span name="date_endSpan" id="date_endSpan" class="field-span"><br></span>
-
+                        <?php
+                            if(isset($_SESSION['deadline'])){
+                                echo '<span style="color:green"><b>&nbsp;Deadline update successful.</b></span>';
+                                unset($_SESSION['deadline']);
+                            }
+                        ?>
                         <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Ορισμός Περιόδου" disabled></input>
                     </form>
                 </div>

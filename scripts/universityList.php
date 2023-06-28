@@ -1,13 +1,14 @@
 <?php
     session_start();
+    require "credentials.php";
 
-    // Connectiong to database
-    $con = mysqli_connect("localhost:3306","root","");
+    // Connecting to database
+    $con = mysqli_connect($host,$user,$password);
     if (!$con){
-        echo "Problem in the connection. "/* .mysqli_error() */;
+        echo "problem in the connection"/* .mysqli_error() */;
         die;
     }
-    mysqli_select_db($con, "ErasmApp");
+    mysqli_select_db($con, $db);
 
 
     // Getting list of universities

@@ -1,10 +1,5 @@
 // Global variables
-var fnameBool = 0;
-var lnameBool = 0;
-var amBool = 0;
-var emailBool = 0;
-var usernameBool = 0;
-var passwordBool = 0;
+var newPasswordBool = 0;
 var confirmBool = 0;
 
 function fnameCheck(){
@@ -127,24 +122,24 @@ function usernameCheck(){
 }
 
 function passwordCheck(){
-    var password = document.getElementById("password").value;
+    var newPassword = document.getElementById("newPassword").value;
     var re = /^(?=.*[!#$])[a-zA-Z0-9!#$]{5,}$/;
     
-    if(password ==  ""){
+    if(newPassword ==  ""){
         document.getElementById("passwordSpan").innerHTML = "&nbsp;";
-        passwordBool = 0;
+        newPasswordBool = 0;
     }
     else if(password.length < 5){
         document.getElementById("passwordSpan").innerHTML = "&nbsp; Password must contain at least 5 characters.";
-        passwordBool = 0;
+        newPasswordBool = 0;
     }
     else if(re.test(password)){
         document.getElementById("passwordSpan").innerHTML = "&nbsp;";
-        passwordBool = 1;
+        newPasswordBool = 1;
     }
     else{
         document.getElementById("passwordSpan").innerHTML = "&nbsp; Please must contain at least 1 special character.";
-        passwordBool = 0;
+        newPasswordBool = 0;
     }
 
     var confirm = document.getElementById("confirm").value;
@@ -163,8 +158,8 @@ function passwordCheck(){
 }
 
 function formCheck(){
-    if(fnameBool == 0 || lnameBool == 0 || amBool == 0 || emailBool == 0 || usernameBool == 0 || passwordBool == 0 || confirmBool == 0){
-        // document.getElementById("submit").value =    fnameBool  + " " + lnameBool  + " " + amBool  + " " + emailBool  + " " + usernameBool  + " " + passwordBool  + " " + confirmBool; // For testing purposes
+    if(fnameBool == 0 || lnameBool == 0 || amBool == 0 || emailBool == 0 || usernameBool == 0 || newPasswordBool == 0 || confirmBool == 0){
+        // document.getElementById("submit").value =    fnameBool  + " " + lnameBool  + " " + amBool  + " " + emailBool  + " " + usernameBool  + " " + newPasswordBool  + " " + confirmBool; // For testing purposes
         document.getElementById("submit").disabled = true;
         document.getElementById("submit").classList.remove("form-button");
         document.getElementById("submit").classList.add("form-button-disabled");

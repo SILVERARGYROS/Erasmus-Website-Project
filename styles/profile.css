@@ -66,6 +66,7 @@ body{
 	border: 1px #B33EC6 solid;
 	background-color: #fff;
 	color:#B33EC6;
+	text-decoration: none;
 }
 
 .learn-more-button.stroke.form{
@@ -76,6 +77,7 @@ body{
 	padding: 15px 15px;
 	padding-left: 30px;
 	padding-right: 30px;
+	text-decoration: none;
 }
 
 .welcome1 .learn-more-button.stroke:hover{
@@ -86,9 +88,9 @@ body{
 }
 
 .welcome1 .learn-more-button:hover{
-  background-color: #683257;
-  transition: 0.5s;
-  cursor: pointer;
+	background-color: #683257;
+	transition: 0.5s;
+	cursor: pointer;
 }
 
 .accountpage {

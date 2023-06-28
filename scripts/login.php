@@ -28,13 +28,15 @@
         $_SESSION['wrongCredentials'] = "Username and/or password were incorrect!";
         // mysqli_close($con);
         header("location: ../login.html");
+        mysqli_close($con);
         die;
     }
 
     // Logging in
     $credentials = mysqli_fetch_assoc($result);
+    var_dump($credentials);
     $_SESSION['username'] = $username;
-    $_SESSION['id'] = $credentials['id'];
+    $_SESSION['id'] = $credentials['user_id'];
     $_SESSION['fname'] = $credentials['fname'];
     $_SESSION['lname'] = $credentials['lname'];
     $_SESSION['am'] = $credentials['am'];

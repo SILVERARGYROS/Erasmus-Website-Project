@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['last_visited'] = "index.html";
+    $_SESSION['last_visited'] = "profile.html";
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -61,14 +61,14 @@
             <div class="welcome1">
                 <div class="accountpage">
                     <div class="bottomframe">
-                        <a class="learn-more-button stroke">Αλλαγή Κωδικού</a>
-                        <a class="learn-more-button stroke">Επεξεργασία Στοιχείων</a>
-                        <a class="learn-more-button">Αποσύνδεση</a>
+                        <a href="changePassword.html" class="learn-more-button stroke">Αλλαγή Κωδικού</a>
+                        <a href="editProfile.html" class="learn-more-button stroke">Επεξεργασία Στοιχείων</a>
+                        <a href="scripts/logout.php" class="learn-more-button">Αποσύνδεση</a>
                     </div>
                     <div class="forminfo">
                         <p class="title1">Κατάσταση Αίτησης</p>
                         <p class="formstatus">Η αίτησή σας δεν έχει εγκριθεί ακόμα.</p>
-                      <a class="learn-more-button stroke form">Επεξεργασία Αίτησης</a>
+                      <a href="application.html" class="learn-more-button stroke form">Επεξεργασία Αίτησης</a>
                     </div>
                     <div class="account">
                       <div class="email">thisratio@gmail.com</div>

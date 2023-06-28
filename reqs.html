@@ -16,6 +16,7 @@
         <title>Erasmus Requirements Page</title>
     </head>
     <body>
+        <script src="./scripts/reqsFormChecks.js"></script>
 
         <!--Topbar Navigation Code-->
         <div class="header" id="header">
@@ -114,11 +115,6 @@
                             Μπορείτε να συμπληρώσετε τα στατιστικά σας στην φόρμα αυτόματου ελέγχου και να δείτε αν πληρείτε τις προϋποθέσεις.<br>
                             <br>
                             Η πλατφόρμα ελέγχου ενημερώνεται πάντα μαζί με τις προϋποθέσεις παραπάνω.<br>
-                            <br>
-                            <br>
-                            <br>
-                            Τελευταία ενημέρωση: 06/05/2023
-
                         </section>
                     </div>
                     
@@ -127,10 +123,10 @@
                             <div class="text">
                                 Φόρμα Ελέγχου
                             </div>
-                            <form action="#">
+                            <form name="reqsForm" id="reqsForm" action="javascript:void(0);" enctype="multipart/form-data" oninput="formCheck()">
                                 <div class="field">
-                                   <label class="first-label">Τρέχων έτος σπουδών:&zwnj;&zwnj;&zwnj;&zwnj;&zwnj;&zwnj;&zwnj;&zwnj;&zwnj;</label>
-                                   <select class="input input first-input">
+                                   <label class="first-label">Τρέχων έτος σπουδών:</label>
+                                   <select name="studyYear" id="studyYear" class="input input first-input" onclick="studyYearCheck()">
                                        <option selected value="0"> 
                                        <option value="1"> 1ο
                                        <option value="2"> 2ο
@@ -141,26 +137,27 @@
                                 </div>
                                 <div class="field">
                                     <label>Ποσοστό «περασμένων» μαθημάτων έως και το προηγούμενο έτος:</label>
-                                    <input required="" type="number" min="0" max="100" class="input">
+                                    <input name="percentage" id="percentage" type="number" min="0" max="100" class="input" required oninput="percentageCheck()">
                                 </div>
                                 <div class="field second-last-field">
                                     <label>Μέσος όρος των «περασμένων» μαθημάτων έως και το προηγούμενο έτος σπουδών:</label>
-                                    <input required="" type="number" step="0.01" class="input">
+                                    <input name="average" id="average" type="number" step="0.01" class="input" required oninput="averageCheck()">
                                 </div>
                                 <label class="last-label-format">Πιστοποιητικό γνώσης της αγγλικής γλώσσας:</label>
                                 <div class="field last-radio-field">
                                     <label class="last-label">Πιστοποιητικό γνώσης της αγγλικής γλώσσας:</label>
                                     <div class="radio-field">
-                                        A1<input required="" name="englishLevel" type="radio" class="radio-button" value="A1">
-                                        A2<input required="" name="englishLevel" type="radio" class="radio-button" value="A2">
-                                        B1<br><input required="" name="englishLevel" type="radio" class="radio-button" value="B1">
-                                        B2<input required="" name="englishLevel" type="radio" class="radio-button" value="B2">
-                                        C1<input required="" name="englishLevel" type="radio" class="radio-button" value="C1">
-                                        C2<input required="" name="englishLevel" type="radio" class="radio-button" value="C2">
+                                        A1<input name="englishLevel" id="englishLevel" type="radio" class="radio-button" value="A1" required onclick="englishLevelCheck()">
+                                        A2<input name="englishLevel" id="englishLevel" type="radio" class="radio-button" value="A2" required onclick="englishLevelCheck()">
+                                        B1<br><input name="englishLevel" id="englishLevel" type="radio" class="radio-button" value="B1" required onclick="englishLevelCheck()">
+                                        B2<input name="englishLevel" id="englishLevel" type="radio" class="radio-button" value="B2" required onclick="englishLevelCheck()">
+                                        C1<input name="englishLevel" id="englishLevel" type="radio" class="radio-button" value="C1" required onclick="englishLevelCheck()">
+                                        C2<input name="englishLevel" id="englishLevel" type="radio" class="radio-button" value="C2" required onclick="englishLevelCheck()">
                                     </div>
                                 </div>
-                                <div class="forgot-pass"></div> 
-                                <button class="form-button">Έλεγχος</button>
+                                <div class="forgot-pass"></div>
+                                <br><span name="message" id="message"><b>&nbsp;</b></span>
+                                <button name="submit" id="submit" type="submit" class="form-button-disabled" disabled onclick="reqsForm()">Έλεγχος</button>
                             </form>
                         </div>
                         

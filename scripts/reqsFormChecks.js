@@ -49,7 +49,6 @@ function formCheck(){
         document.getElementById("submit").disabled = true;
         document.getElementById("submit").classList.remove("form-button");
         document.getElementById("submit").classList.add("form-button-disabled");
-        log("hello");
     }
     else{
         document.getElementById("submit").disabled = false;

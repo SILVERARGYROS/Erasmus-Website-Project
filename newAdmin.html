@@ -49,7 +49,7 @@
                     <div class="text">
                         Δημιουργία Νέου Διαχειριστή
                     </div>
-                    <form name="signupForm" id="signupForm" action="scripts/newAdmin.php" method="post" oninput="formCheck()">
+                    <form name="newAdminForm" id="newAdminForm" action="scripts/newAdmin.php" method="post" oninput="formCheck()">
                         <div class="field">
                             <input name="fname" id="fname" type="text" class="input" placeholder="Όνομα" required oninput="fnameCheck()">
                         </div>
@@ -67,8 +67,13 @@
                         </div>
                         <span name="usernameSpan" id="usernameSpan" class="field-span"><br></span>
 
-                         <div name="gap" id="gap" class="forgot-pass"></div> <!--For the gap -->
-
+                        <div name="gap" id="gap" class="forgot-pass"></div> <!--For the gap -->
+                        <?php
+                            if(isset($_SESSION['application'])){
+                                echo '<span style="color:green"><b>New admin successfully registered</b></span>';
+                                unset($_SESSION['application']);
+                            }
+                        ?>
                         <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Δημιουργία Διαχειριστή" disabled></input>
                     </form>
                 </div>

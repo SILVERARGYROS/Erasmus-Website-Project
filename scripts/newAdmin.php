@@ -1,4 +1,17 @@
 <?php
+    // Source: https://stackoverflow.com/questions/4356289/php-random-string-generator
+    function generateRandomString($length) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[random_int(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+
+
     session_start();
     require "credentials.php";
 
@@ -14,10 +27,10 @@
     // Form data
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
-    $am = $_POST['am'];
+    $am = "2022999999999";
     $email = $_POST['email'];
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = generateRandomString(10);
 
     // Generating upload folder and profile pic   
     mkdir("../uploads/$username", 0777, true);
@@ -33,28 +46,22 @@
 
     $result = mysqli_query($con, "SELECT *
                                 FROM USER_GROUPS
-                                WHERE group_type = 'registered user'");
+                                WHERE group_type = 'administrator'");
 
     $user_type_info = mysqli_fetch_assoc($result);
     $group_id = $user_type_info['id'];
-    $group_type = 'registered user';
 
     $result = mysqli_query($con, "INSERT INTO GROUPED (user_id, group_id) 
-                                VALUES ($user_id, $group_id)");
+                                VALUES ('$user_id', '$group_id')");
 
 
-    // Logging in
-    $_SESSION['group_type'] = $group_type;
-    $_SESSION['id'] = $user_id;
-    $_SESSION['username'] = $username;
-    $_SESSION['fname'] = $credentials['fname'];
-    $_SESSION['lname'] = $credentials['lname'];
-    $_SESSION['am'] = $credentials['am'];
-    $_SESSION['email'] = $credentials['email'];
-    $_SESSION['submitted'] = false;
+    // emailing message with credentials 
+    // Source: https://stackoverflow.com/questions/15965376/how-to-configure-xampp-to-send-mail-from-localhost
+
+    // mail($email,"ErasmusApp Admin Credentials","Username: ".$username."\nPassword: ".$password);
 
 
-    unset($_SESSION['wrongCredentials']);
+    $_SESSION['newAdmin'] = "registered";
     mysqli_close($con);
-    header("location: ../index.html");
+    // header("location: ../index.html");
 ?>

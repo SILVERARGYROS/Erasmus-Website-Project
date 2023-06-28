@@ -7,7 +7,7 @@
     <head>
         <link href="styles/header.css" rel="stylesheet" type="text/css">
         <link href="styles/footer.css" rel="stylesheet" type="text/css">
-        <link href="styles/admin.css" rel="stylesheet" type="text/css">
+        <link href="styles/viewApp.css" rel="stylesheet" type="text/css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <meta name="author" content="Αργυρός Κωνσταντίνος">
         <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
@@ -52,25 +52,38 @@
             </div>
         </div>
         <!--Topbar Navigation Code-->
-        
+
         <div class="header-content">
+            <div class="filter" id="filter">
+                <div class="filter-container">
+                    <div class="filter-middle">
+                        <label class="filter-label">Φίλτρο Ποσοστού:</label>
+                        <input name="percentageFilter" id="percentageFilter" type="number" min="0" max="100" class="input number" required oninput="percentageCheck()">
+                        <label class="filter-label">Φίλτρο Πανεπιστημίου:</label>
+                        <input name="uniFilter" id="uniFilter" type="text" class="input text" oninput="fnameCheck()">
+                        <button name="sortButton" id="sortButton" type="text" class="sort-button">Sort</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="reqs">
                 <div class="reqs-table">
-                    <table cellspacing="2">
-                        <th colspan="1">ΣΕΛΙΔΑ ΔΙΑΧΕΙΡΙΣΤΗ</th>
-                        <tr>
-                            <td onclick="window.location='deadline.html'" class="condition unmarked">Ορισμός περιόδου υποδολής αιτήσεων</td>
-                        </tr>
-                        <tr>
-                            <td onclick="window.location='viewApp.html'" class="condition marked">Προβολή αιτήσεων</td>
-                        </tr>
-                        <tr>
-                            <td onclick="window.location='index.html'" class="condition unmarked">Ανακοινώσεις αποτελεσμάτων αιτήσεων</td>
-                        </tr>
-                        <tr>
-                            <td onclick="window.location='newAdmin.html'" class="condition marked">Δημιουργία καινούργιου διαχειριστή</td>
+                    <table cellspacing="0">
+                        <th colspan="5">ΑΙΤΗΣΕΙΣ</th>
+                        <tr class="unmarked">
+                            <td><img src="./media/photos/pfp.png"></td>
+                            <td>Κωνσταντίνος</td>
+                            <td>Κατακουζινάκος</td>
+                            <td>2022202000014</td>
+                            <td class="td-checkbox">                                    
+                                <label class="check-container">
+                                    <input name="checkbox" id="checkbox" type="checkbox" class="" value="" required onclick="checkboxCheck()">
+                                    <span name="checkmark" id="checkmark" class="checkmark"></span>
+                                </label>
+                            </td>
                         </tr>
                     </table>
+                    
                 </div>
             </div>
             

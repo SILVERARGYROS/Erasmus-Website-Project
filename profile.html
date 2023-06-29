@@ -1,8 +1,8 @@
 <?php
     session_start();
-    $_SESSION['last_visited'] = "profile.html";
+    $_SESSION['last_visited'] = "index.html";
 
-
+    
     if(isset($_SESSION['pfp'])){
         $email = $_SESSION["email"];
         $username = $_SESSION["username"];
@@ -14,7 +14,6 @@
     if(isset($_SESSION['group_type'])){
         $group_type = $_SESSION['group_type'];
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -30,7 +29,7 @@
         <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8"/>
-        <title>Erasmus Profile Page</title>
+        <title>My Erasmus Profile</title>
     </head>
     <body>
 
@@ -70,21 +69,21 @@
             <div class="welcome1">
                 <div class="accountpage">
                     <div class="bottomframe">
-                        <a href="changePassword.html" class="learn-more-button stroke">Αλλαγή Κωδικού</a>
-                        <a href="editProfile.html" class="learn-more-button stroke">Επεξεργασία Στοιχείων</a>
-                        <a href="scripts/logout.php" class="learn-more-button">Αποσύνδεση</a>
+                        <button onclick="window.location='changePassword.html'" class="learn-more-button stroke">Αλλαγή Κωδικού</button>
+                        <button onclick="window.location='editProfile.html'" class="learn-more-button stroke">Επεξεργασία Στοιχείων</button>
+                        <button onclick="window.location='logout.php'" class="learn-more-button filled">Αποσύνδεση</button>
                     </div>
                     <div class="forminfo">
-                        <p class="title1">Κατάσταση Αίτησης</p>
-                        <p class="formstatus">Η αίτησή σας δεν έχει εγκριθεί ακόμα.</p>
-                      <a href="application.html" class="learn-more-button stroke form">Επεξεργασία Αίτησης</a>
+                        <p class="title1 text">Κατάσταση Αίτησης</p>
+                        <p class="formstatus text">Η αίτησή σας δεν έχει εγκριθεί ακόμα.</p>
+                      <a href="application.html"class="learn-more-button stroke form text">Επεξεργασία</a>
                     </div>
                     <div class="account">
-                      <div class="email"> <?php $email; ?>> </div>
-                      <div class="username"> <?php echo $username; ?> </div>
-                      <div class="name"> <?php echo $fname, $lname; ?> </div>
-                      <img class="pfp" src="<?php echo $pfp; ?>" />
-                      <div class="title1">Ο Λογαριασμός μου</div>
+                        <div class="title1 text">Ο Λογαριασμός μου</div>
+                        <img class="pfp" src="<?php echo $pfp; ?>" />
+                        <div class="name text"> <?php echo $fname, $lname; ?> </div>
+                        <div class="username text"> <?php echo $username; ?> </div>
+                        <div class="email text"> <?php $email; ?>> </div>
                     </div>
                   </div>
                   

@@ -7,6 +7,13 @@
     $am = $_SESSION['am'];
     $email = $_SESSION['email'];
     $username = $_SESSION['username'];
+
+    if(isset($_SESSION['pfp'])){
+        $pfp = $_SESSION['pfp'];
+    }
+    if(isset($_SESSION['group_type'])){
+        $group_type = $_SESSION['group_type'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="el">

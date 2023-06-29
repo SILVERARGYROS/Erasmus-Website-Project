@@ -22,21 +22,16 @@ function deadline(){
 
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var deadline = xmlhttp.responseText.split(";");
+            let query = xmlhttp.responseText;
+
+            const dates = JSON.parse(query);
             
-            // [0] = deadline year 
-            // [1] = deadline month  
-            // [2] = deadline day 
-            // [3] = deadline hour 
-            // [4] = deadline minute  
-            
-            var deadlineString = "Προθεσμία Υποβολής: " + deadline[2] + "/" + deadline[1] + "/" + deadline[0] + " " + deadline[3] + ":" + deadline[4];
-            document.getElementById("deadlineInfo").innerHTML = deadlineString;
+            document.getElementById("deadlineInfo").innerHTML = "Προθεσμία Υποβολής: " + dates.deadline_end;
             
             
             // Checking if deadline has already passed 
             const currentDate = new Date();     // yyyy-mm-ddThh:mm:ss.mmmZ
-            const deadlineDate = new Date(parseInt(deadline[0]), parseInt(deadline[1]-1), parseInt(deadline[2]), parseInt(deadline[3]), parseInt(deadline[4]));
+            const deadlineDate = new Date(dates.deadline_end);
 
 
             // Checking if deadline has already passed first
@@ -218,7 +213,7 @@ function formCheck(){
     checkboxCheck();
         
     if(deadlineBool == 0){
-        document.getElementById("submit").value = "Application has already been submitted."
+        document.getElementById("submit").value = "Deadline has passed."
 
         document.getElementById("percentage").disabled = true;
         document.getElementById("percentage").classList.remove(input);
@@ -247,8 +242,6 @@ function formCheck(){
         document.getElementById('checkbox').disabled = true;
         document.getElementById('checkmark').classList.remove(checkmark);
         document.getElementById('checkmark').classList.add(disabled-checkmark);
-
-
         return;
     }
     else{

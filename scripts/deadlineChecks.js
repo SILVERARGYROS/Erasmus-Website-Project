@@ -27,7 +27,7 @@ function formCheck(){
     endDate = document.getElementById("date_end").value;
 
     var valid_period = new Date(startDate).getTime() < new Date(endDate).getTime();
-    document.getElementById("submit").value = valid_period; // For testing purposes
+    // document.getElementById("submit").value = valid_period; // For testing purposes
 
     if(!valid_period){
         document.getElementById("date_endSpan").innerHTML = "&nbsp; Invalid expiration date.";

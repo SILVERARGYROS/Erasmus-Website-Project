@@ -42,12 +42,13 @@
     $_SESSION['am'] = $credentials['am'];
     $_SESSION['email'] = $credentials['email'];
     $_SESSION['group_type'] = $credentials['group_type'];
+    $_SESSION['pfp'] = $credentials['pfp'];
 
 
     $user_id = $credentials['id'];
     $result = mysqli_query($con, "SELECT *
-    FROM APPLIED
-    WHERE user_id = '$user_id';");
+                                FROM APPLIED
+                                WHERE user_id = '$user_id';");
 
     if(mysqli_num_rows($result) < 1){
         $_SESSION['submitted'] = false;

@@ -21,7 +21,7 @@
 
     // Generating upload folder and profile pic   
     mkdir("../uploads/$username", 0777, true);
-    echo copy("../uploads/!general!/default.png", "../uploads/$username/default.png");
+    echo copy("../uploads/!general!/default.png", "../uploads/$username/profile_pic.png");
     $pfp = "../uploads/$username/profile_pic.png";
 
     // Adding user to database
@@ -52,6 +52,7 @@
     $_SESSION['am'] = $credentials['am'];
     $_SESSION['email'] = $credentials['email'];
     $_SESSION['submitted'] = false;
+    $_SESSION['pfp'] = $pfp;
 
 
     unset($_SESSION['wrongCredentials']);

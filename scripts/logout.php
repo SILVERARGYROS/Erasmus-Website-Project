@@ -10,6 +10,10 @@
     unset($_SESSION['lname']);
     unset($_SESSION['am']);
     unset($_SESSION['email']);
+    unset($_SESSION['pfp']);
+    unset($_SESSION['group_type']);
+    unset($_SESSION['submitted']);
+
 
     // We do not use session_destroy(); because some data 
     // from the session must remain, even for guests

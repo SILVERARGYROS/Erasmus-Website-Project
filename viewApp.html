@@ -58,31 +58,19 @@
                 <div class="filter-container">
                     <div class="filter-middle">
                         <label class="filter-label">Φίλτρο Ποσοστού:</label>
-                        <input name="percentageFilter" id="percentageFilter" type="number" min="0" max="100" class="input number" required oninput="percentageCheck()">
+                        <input name="percentageFilter" id="percentageFilter" type="number" min="0" max="100" class="input number" required oninput="queryFunction()">
                         <label class="filter-label">Φίλτρο Πανεπιστημίου:</label>
-                        <input name="uniFilter" id="uniFilter" type="text" class="input text" oninput="fnameCheck()">
-                        <button name="sortButton" id="sortButton" type="text" class="sort-button">Sort</button>
+                        <input name="uniFilter" id="uniFilter" type="text" class="input text" oninput="queryFunction()">
+                        <button name="sortButton" id="sortButton" type="text" class="sort-button" onclick="toggleSort()">Sort</button>
                     </div>
                 </div>
             </div>
 
             <div class="reqs">
                 <div class="reqs-table">
-                    <table cellspacing="0">
-                        <th colspan="6">ΑΙΤΗΣΕΙΣ</th>
-                        <tr class="unmarked">
-                            <td><img src="./media/photos/pfp.png"></td>
-                            <td>Κωνσταντίνος</td>
-                            <td>Κατακουζινάκος</td>
-                            <td>2022202000014</td>
-                            <td>silverargyros@yahoo.gr</td>
-                            <td class="td-checkbox">                                    
-                                <label class="check-container">
-                                    <input name="checkbox" id="checkbox" type="checkbox" class="" value="" required onclick="checkboxCheck()">
-                                    <span name="checkmark" id="checkmark" class="checkmark"></span>
-                                </label>
-                            </td>
-                        </tr>
+                    <table name="table" id="table" cellspacing="0">
+                        <th colspan="9">ΑΙΤΗΣΕΙΣ</th>
+                        <!-- <tr class="unmarked"><td><img src="./media/photos/pfp.png"></td><td>Κωνσταντίνος</td><td>Κατακουζινάκος</td><td>2022202000014</td><td>silverargyros@yahoo.gr</td><td>70%</td><td>6.500</td><td>C2</td><td class="td-checkbox">                                    <label class="check-container"><input name="checkbox" id="checkbox" type="checkbox" class="" value="" required onclick="checkboxCheck()"><span name="checkmark" id="checkmark" class="checkmark"></span></label></td></tr> -->
                     </table>
                     
                 </div>
@@ -111,5 +99,6 @@
         </div>
         
     </body>
+    <script src="scripts/appsQuery.js"></script>     
     <script src="scripts/stickyHeader.js"></script>     
 </html>

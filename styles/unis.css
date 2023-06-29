@@ -120,11 +120,13 @@ body{
 }
 
 .reqs-table table{
-    height: 25%;
     width: 95%;
+    height: 25%;
 }
 
 .reqs-table th{
+    overflow-y: scroll;
+    height: 25%;
     /* border: 1px solid black; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -138,6 +140,7 @@ body{
 .reqs-table td{
     font-size: 20px;
     font-weight:bolder;
+    height: 50px;
     /* padding: 5px; */
     border: 0;
     margin: 0;

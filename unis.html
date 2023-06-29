@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="el">
     <head>
+
         <link href="styles/header.css" rel="stylesheet" type="text/css">
         <link href="styles/footer.css" rel="stylesheet" type="text/css">
         <link href="styles/unis.css" rel="stylesheet" type="text/css">
@@ -58,25 +59,19 @@
                 <div class="filter-container">
                     <div class="filter-middle">
                         <label class="filter-label">Όνομα Πανεπιστημίου:</label>
-                        <input name="percentageFilter" id="percentageFilter" type="text" min="0" max="100" class="input text1" required oninput="percentageCheck()">
+                        <input name="nameFilter" id="nameFilter" type="text" class="input text1" required oninput="queryFunction()">
                         <label class="filter-label">Χώρα Πανεπιστημίου:</label>
-                        <input name="uniFilter" id="uniFilter" type="text" class="input text2" oninput="fnameCheck()">
-                        <button name="sortButton" id="sortButton" type="text" class="sort-button">Προσθήκη</button>
+                        <input name="countryFilter" id="countryFilter" type="text" class="input text2" oninput="queryFunction()">
+                        <button name="sortButton" id="sortButton" type="text" class="sort-button " onclick="toggleSort()">Sort</button>
                     </div>
                 </div>
             </div>
 
             <div class="reqs">
                 <div class="reqs-table">
-                    <table cellspacing="0">
+                    <table name="table" id="table" cellspacing="0">
                         <th colspan="3">ΠΑΝΕΠΙΣΤΗΜΙΑ</th>
-                        <tr class="unmarked">
-                            <td>Πανεπιστήμιο Τρίπολης</td>
-                            <td>Ελλάδα</td>
-                            <td onclick=""><span class="delete">Διαγραφή</span></td>
-                        </tr>
                     </table>
-                    
                 </div>
             </div>
             
@@ -103,5 +98,6 @@
         </div>
         
     </body>
+    <script src="scripts/unisQuery.js"></script>     
     <script src="scripts/stickyHeader.js"></script>     
 </html>

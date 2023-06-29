@@ -34,7 +34,7 @@
 
     // Generating upload folder and profile pic   
     mkdir("../uploads/$username", 0777, true);
-    echo copy("../uploads/!general!/default.png", "../uploads/$username/default.png");
+    echo copy("../uploads/!general!/default.png", "../uploads/$username/profile_pic.png");
     $pfp = "../uploads/$username/profile_pic.png";
 
     // Adding user to database

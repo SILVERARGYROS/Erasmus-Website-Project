@@ -1,6 +1,13 @@
 <?php
     session_start();
     $_SESSION['last_visited'] = "reqs.html";
+
+    if(isset($_SESSION['pfp'])){
+        $pfp = $_SESSION['pfp'];
+    }
+    if(isset($_SESSION['group_type'])){
+        $group_type = $_SESSION['group_type'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -21,34 +28,37 @@
         <!--Topbar Navigation Code-->
         <div class="header" id="header">
             <div class="header-container">
-                <a class="button" href="index.html"><b>Erasmus</b></a>
-                <a class="mobile" href="index.html"><b>δε μου δούλευε ;-;</b></a>
-                <a href="./scripts/responsiveHeader.js" class="icon" onclick="responsiveFunction()"><i class="fa fa-bars"></i></a>
+                <a class="logo" href="index.html"><img src="./media/photos/logo.png"></a>
+
                 <div class="header-middle">
                     <a href="index.html">Αρχική</a>
                     <a href="more.html">Περισσότερα</a>
                     <a href="reqs.html">Προϋποθέσεις</a>
-                    <a href="application.html">Αίτηση</a>
+                    <?php
+                        if(isset($_SESSION['group_type'])){
+                            echo '<a href="application.html">Αίτηση</a>';
+                            if($group_type == "administrator"){
+                            echo '<a href="admin.html">Διαχείριση</a>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="header-right">
-                    <a class="language-button-gr"><img src="media/photos/gr-icon.jpg"></a>
-                    <a class="language-button-en"><img src="media/photos/en-icon.jpg"></a>
-                    <label class="container">
-                        <input id="check" type="checkbox">
-                        <span></span>
-                        <label for="check" class="shadow"></label>
-                    </label>
+                    <div class="seperator"></div>
                     <?php
-                        if(isset($_SESSION['username'])){
-                            $username = $_SESSION['username'];
-                            echo '<a class="signup" href="">'.$username.'</a>';
-                            echo '<a class="login" href="scripts/logout.php">logout</a>';
+                        if(isset($_SESSION['pfp'])){
+                            echo '<a class="pfp" href="profile.html"><img src="';
+                            echo $pfp.'"></a>';
                         }
                         else{
                             echo '<a class="signup" href="sign-up.html">Εγγραφή</a>';
                             echo '<a class="login" href="login.html">Σύνδεση</a>';
                         }
                     ?>
+                    <a class="language-button-gr"><img src="media/photos/gr-icon.jpg"></a>
+                    <a class="language-button-en"><img src="media/photos/en-icon.jpg"></a>
+                    </label>
+                    
                 </div>
             </div>
         </div>

@@ -42,7 +42,7 @@
     $_SESSION['am'] = $credentials['am'];
     $_SESSION['email'] = $credentials['email'];
     $_SESSION['group_type'] = $credentials['group_type'];
-    $_SESSION['pfp'] = $credentials['pfp'];
+    $_SESSION['pfp'] = substr($credentials['pfp'], 1);
 
 
     $user_id = $credentials['id'];

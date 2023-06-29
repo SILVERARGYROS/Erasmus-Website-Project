@@ -52,7 +52,7 @@
     $_SESSION['am'] = $credentials['am'];
     $_SESSION['email'] = $credentials['email'];
     $_SESSION['submitted'] = false;
-    $_SESSION['pfp'] = $pfp;
+    $_SESSION['pfp'] = substr($pfp, 1);
 
 
     unset($_SESSION['wrongCredentials']);

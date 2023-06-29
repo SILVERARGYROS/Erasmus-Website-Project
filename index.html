@@ -4,7 +4,9 @@
 
     if(isset($_SESSION['pfp'])){
         $pfp = $_SESSION['pfp'];
-        $pfp = substr($pfp, 1);
+    }
+    if(isset($_SESSION['group_type'])){
+        $group_type = $_SESSION['group_type'];
     }
 ?>
 <!DOCTYPE html>
@@ -34,15 +36,21 @@
                     <a href="index.html">Αρχική</a>
                     <a href="more.html">Περισσότερα</a>
                     <a href="reqs.html">Προϋποθέσεις</a>
-                    <a href="application.html">Αίτηση</a>
+                    <?php
+                        if(isset($_SESSION['group_type'])){
+                            echo '<a href="application.html">Αίτηση</a>';
+                            if($group_type == "administrator"){
+                            echo '<a href="admin.html">Διαχείριση</a>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="header-right">
                     <div class="seperator"></div>
                     <?php
-                        if(isset($_SESSION['username'])){
-                            $username = $_SESSION['username'];
-                            echo '<a class="pfp" href="profile.html"><img src="<?php echo substr($pfp, 0); ?>"></a>';
-                            echo substr($pfp, 0);
+                        if(isset($_SESSION['pfp'])){
+                            echo '<a class="pfp" href="profile.html"><img src="';
+                            echo $pfp.'"></a>';
                         }
                         else{
                             echo '<a class="signup" href="sign-up.html">Εγγραφή</a>';

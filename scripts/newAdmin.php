@@ -63,5 +63,5 @@
 
     $_SESSION['newAdmin'] = "registered";
     mysqli_close($con);
-    // header("location: ../index.html");
+    header("location: ../newAdmin.html");
 ?>

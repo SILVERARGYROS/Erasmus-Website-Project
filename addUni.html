@@ -7,7 +7,7 @@
     <head>
         <link href="styles/header.css" rel="stylesheet" type="text/css">
         <link href="styles/footer.css" rel="stylesheet" type="text/css">
-        <link href="styles/newAdmin.css" rel="stylesheet" type="text/css">
+        <link href="styles/addUni.css" rel="stylesheet" type="text/css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <meta name="author" content="Αργυρός Κωνσταντίνος">
         <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
@@ -47,34 +47,30 @@
             <div class="welcome1">
                 <div class="content">
                     <div class="text">
-                        Δημιουργία Νέου Διαχειριστή
+                        Προσθήκη Πανεπιστημίου
                     </div>
-                    <form name="newAdminForm" id="newAdminForm" action="scripts/newAdmin.php" method="post" oninput="formCheck()">
+                    <form name="newAdminForm" id="newAdminForm" action="scripts/addUni.php" method="post" oninput="formCheck()">
                         <div class="field">
-                            <input name="fname" id="fname" type="text" class="input" placeholder="Όνομα" required oninput="fnameCheck()">
+                            <input name="name" id="name" type="text" class="input" placeholder="Όνομα Πανεπιστημίου" required oninput="nameCheck()">
                         </div>
-                        <span name="fnameSpan" id="fnameSpan" class="field-span"><br></span>
+                        <span name="nameSpan" id="nameSpan" class="field-span"><br></span>
                         <div class="field">
-                            <input name="lname" id="lname" type="text" class="input" placeholder="Επίθετο" required oninput="lnameCheck()">
+                            <input name="country" id="country" type="text" class="input" placeholder="Χώρα Πανεπιστημίου" required oninput="countryCheck()">
                         </div>
-                        <span name="lnameSpan" id="lnameSpan" class="field-span"><br></span>
-                        <div class="field">
-                            <input name="email" id="email" type="email" class="input" placeholder="E-mail" required oninput="emailCheck()">
-                        </div>
-                        <span name="emailSpan" id="emailSpan" class="field-span"><br></span>
-                        <div class="field">
-                            <input name="username" id="username" type="text" class="input" placeholder="Όνομα Χρήστη" required oninput="usernameCheck()">
-                        </div>
-                        <span name="usernameSpan" id="usernameSpan" class="field-span"><br></span>
-
+                        <span name="countrySpan" id="countrySpan" class="field-span"><br></span>
                         <div name="gap" id="gap" class="forgot-pass"></div> <!--For the gap -->
                         <?php
-                            if(isset($_SESSION['newAdmin'])){
-                                echo '<span style="color:green"><b>New admin successfully registered</b></span>';
-                                unset($_SESSION['newAdmin']);
+                            if(isset($_SESSION['newUni'])){
+                                echo '<span style="color:green"><b>University added successfully.</b></span>';
+                                unset($_SESSION['newUni']);
+                            }
+
+                            if(isset($_SESSION['wrongCredentials'])){
+                                echo '<span style="color:red"><b>University already exists.</b></span>';
+                                unset($_SESSION['wrongCredentials']);
                             }
                         ?>
-                        <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Δημιουργία Διαχειριστή" disabled></input>
+                        <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Προσθήκη Πανεπιστημίου" disabled></input>
                     </form>
                 </div>
             </div>
@@ -101,6 +97,6 @@
         <!--Footer Code-->
         
     </body>
-    <script src="./scripts/newAdminChecks.js"></script>
+    <script src="./scripts/addUniChecks.js"></script>
     <script src="scripts/stickyHeader.js"></script>     
 </html>

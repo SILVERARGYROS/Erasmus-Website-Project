@@ -1,0 +1,91 @@
+<?php
+    session_start();
+    $_SESSION['last_visited'] = "reqs.html";
+?>
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+
+        <link href="styles/header.css" rel="stylesheet" type="text/css">
+        <link href="styles/footer.css" rel="stylesheet" type="text/css">
+        <link href="styles/unis.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="author" content="Αργυρός Κωνσταντίνος">
+        <meta name="description" content="Επίσημη σελίδα πληροφοριών για πρακτική άσκηση Erasmus">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8"/>
+        <title>Erasmus Requirements Page</title>
+    </head>
+    <body>
+
+        <!--Topbar Navigation Code-->
+        <div class="header" id="header">
+            <div class="header-container">
+                <a class="button" href="index.html"><b>Erasmus</b></a>
+                <a class="mobile" href="index.html"><b>δε μου δούλευε ;-;</b></a>
+                <a href="./scripts/responsiveHeader.js" class="icon" onclick="responsiveFunction()"><i class="fa fa-bars"></i></a>
+                <div class="header-middle">
+                    <a href="index.html">Αρχική</a>
+                    <a href="more.html">Περισσότερα</a>
+                    <a href="reqs.html">Προϋποθέσεις</a>
+                    <a href="application.html">Αίτηση</a>
+                </div>
+                <div class="header-right">
+                    <a class="language-button-gr"><img src="media/photos/gr-icon.jpg"></a>
+                    <a class="language-button-en"><img src="media/photos/en-icon.jpg"></a>
+                    <label class="container">
+                        <input id="check" type="checkbox">
+                        <span></span>
+                        <label for="check" class="shadow"></label>
+                    </label>
+                    <?php
+                        if(isset($_SESSION['username'])){
+                            $username = $_SESSION['username'];
+                            echo '<a class="signup" href="">'.$username.'</a>';
+                            echo '<a class="login" href="scripts/logout.php">logout</a>';
+                        }
+                        else{
+                            echo '<a class="signup" href="sign-up.html">Εγγραφή</a>';
+                            echo '<a class="login" href="login.html">Σύνδεση</a>';
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <!--Topbar Navigation Code-->
+
+        <div class="header-content">
+            <div class="reqs">
+                <div class="reqs-table">
+                    <table name="table" id="table" cellspacing="0">
+                        <th colspan="3">ΑΠΟΔΕΚΤΕΣ ΑΙΤΗΣΕΙΣ</th>
+                    </table>
+                </div>
+            </div>
+            
+            <!--Footer Code-->
+            <div class="footer">
+                <ul class="socials">
+                    <li><a href="https://www.facebook.com/groups/erasmus.youthinaction/?locale=el_GR" class="fa fa-facebook"></a></li>
+                    <li><a href="https://twitter.com/EUErasmusPlus" class="fa fa-twitter"></a></li>
+                    <li><a href="https://www.instagram.com/erasmusplusprojects/?hl=el" class="fa fa-instagram"></a></li>
+                    <li><a href="https://www.youtube.com/@europeanparliament" class="fa fa-youtube"></a></li>
+                    <li><a href="https://www.reddit.com/r/Erasmus/" class="fa fa-reddit"></a></li>
+                    <li><a href="https://www.linkedin.com/company/meterasmusplus/" class="fa fa-linkedin"></a></li>
+                </ul>
+                <section class="footer-logo">
+                    <a href="https://commission.europa.eu/legal-notice_en">ERASMUS</a> 
+                </section>
+                <section class="footer-copyright">
+                    <a href="https://commission.europa.eu/legal-notice_en">Copyright © 2023 Erasmus, Inc.</a> 
+                    <!--to type C press alt + 0 1 6 9 from numpad-->
+                </section>
+            </div>
+            <!--Footer Code-->
+
+        </div>
+        
+    </body>
+    <script src="scripts/results.js"></script>     
+    <script src="scripts/stickyHeader.js"></script>     
+</html>

@@ -127,10 +127,10 @@ function usernameCheck(){
 }
 
 function passwordCheck(){
-    var Password = document.getElementById("password").value;
+    var password = document.getElementById("password").value;
     var re = /^(?=.*[!#$])[a-zA-Z0-9!#$]{5,}$/;
     
-    if(Password ==  ""){
+    if(password ==  ""){
         document.getElementById("passwordSpan").innerHTML = "&nbsp;";
         passwordBool = 0;
     }

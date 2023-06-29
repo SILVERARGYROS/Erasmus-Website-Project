@@ -56,7 +56,7 @@
                     <div class="text">
                         Επεξεργασία Προφίλ
                     </div>
-                    <form name="signupForm" id="signupForm" action="scripts/sign-up.php" method="post" oninput="formCheck()">
+                    <form name="editProfileForm" id="editForm" action="scripts/editProfile.php" method="post" oninput="formCheck()">
                         <p class="smaller">Όνομα</p>
                         <div class="field">
                             <input name="fname" id="fname" type="text" class="input" value="<?php echo $fname; ?>" required oninput="fnameCheck()">
@@ -77,24 +77,15 @@
                             <input name="email" id="email" type="email" class="input" value="<?php echo $email; ?>" required oninput="emailCheck()">
                         </div>
                         <span name="emailSpan" id="emailSpan" class="field-span"><br></span>
-                        <!-- <p class="smaller">Τρέχων Κωδικός</p>
-                        <div class="field">
-                            <input name="password" id="password" type="password" class="input" placeholder="Κωδικός Πρόσβαση" required oninput="passwordCheck()">
-                        </div>
-                        <span name="passwordSpan" id="passwordSpan" class="field-span"><br></span>
-                        <p class="smaller">Νέος Κωδικός</p>
-                        <div class="field">
-                            <input name="confirm" id="confirm" type="password" class="input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης" required oninput="passwordCheck()">
-                        </div>
-                        <span name="confirmSpan" id="confirmSpan" class="field-span"><br></span> -->
 
                          <div name="gap" id="gap" class="forgot-pass"></div> <!--For the gap -->
-
+                         <?php
+                            if(isset($_SESSION["profileUpdated"])){
+                                echo '<span style="color:green">'.$_SESSION["profileUpdated"].'</span>';
+                                unset($_SESSION['profileUpdated']);
+                            }
+                        ?>
                         <input name="submit" id="submit" type="submit" class="form-button" value="Ενημέρωση Στοιχείων"></input>
-                        <!-- <div class="sign-up">
-                            Είστε ήδη μέλος; 
-                            <a href="#">Συνδεθείτε τώρα</a>
-                        </div> -->
                     </form>
                 </div>
             </div>
@@ -121,6 +112,6 @@
         <!--Footer Code-->
         
     </body>
-    <script src="./scripts/sign-upChecks.js"></script>
+    <script src="./scripts/editProfileChecks.js"></script>
     <script src="scripts/stickyHeader.js"></script>     
 </html>

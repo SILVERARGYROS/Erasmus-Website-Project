@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require("./scripts/post_variables.php");
+
     $_SESSION['last_visited'] = "reqs.html";
 
     if(isset($_SESSION['pfp'])){
@@ -34,10 +36,16 @@
                     <a href="more.html">Περισσότερα</a>
                     <a href="reqs.html">Προϋποθέσεις</a>
                     <?php
+                        if($_SESSION['approved_applications'] == true){
+                            echo '<a href="approvedApplications.html">Νέα</a>';
+                        }
+
                         if(isset($_SESSION['group_type'])){
                             echo '<a href="application.html">Αίτηση</a>';
+
+
                             if($group_type == "administrator"){
-                            echo '<a href="admin.html">Διαχείριση</a>';
+                                echo '<a href="admin.html">Διαχείριση</a>';
                             }
                         }
                     ?>
@@ -69,13 +77,13 @@
                     <table cellspacing="2">
                         <th colspan="1">ΣΕΛΙΔΑ ΔΙΑΧΕΙΡΙΣΤΗ</th>
                         <tr>
-                            <td onclick="window.location='deadline.html'" class="condition unmarked">Ορισμός περιόδου υποδολής αιτήσεων</td>
+                            <td onclick="window.location='deadline.html'" class="condition unmarked">Ορισμός Περιόδου Υποδολής Αιτήσεων</td>
                         </tr>
                         <tr>
-                            <td onclick="window.location='viewApp.html'" class="condition marked">Προβολή αιτήσεων</td>
+                            <td onclick="window.location='viewApp.html'" class="condition marked">Προβολή Αιτήσεων</td>
                         </tr>
                         <tr>
-                            <td onclick="window.location='index.html'" class="condition unmarked">Ανακοινώσεις αποτελεσμάτων αιτήσεων</td>
+                            <td onclick="window.location='publishResults.html'" class="condition unmarked">Ανακοίνωση Αποτελεσμάτων Αιτήσεων</td>
                         </tr>
                         <tr>
                             <td onclick="window.location='unis.html'" class="condition marked">Κατάλογος Πανεπιστημίων</td>
@@ -87,7 +95,7 @@
                             <td onclick="window.location='viewUsers.html'" class="condition marked">Κατάλογος Χρηστών</td>
                         </tr>
                         <tr>
-                            <td onclick="window.location='newAdmin.html'" class="condition unmarked">Δημιουργία καινούργιου διαχειριστή</td>
+                            <td onclick="window.location='newAdmin.html'" class="condition unmarked">Δημιουργία Καινούργιου Διαχειριστή</td>
                         </tr>
                     </table>
                 </div>

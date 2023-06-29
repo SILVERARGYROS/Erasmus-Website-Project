@@ -14,7 +14,7 @@
     $deadline_end = $_POST['date_end'];
 
     $result = mysqli_query($con, "UPDATE SYSTEM_VARIABLES
-                                  set deadline_start = '$deadline_start', deadline_end = '$deadline_end';");
+                                  SET deadline_start = '$deadline_start', deadline_end = '$deadline_end';");
 
     $_SESSION['deadline'] = "updated";
     mysqli_close($con);

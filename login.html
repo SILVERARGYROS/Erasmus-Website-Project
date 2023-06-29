@@ -1,5 +1,8 @@
 <?php
     session_start();
+    require("./scripts/post_variables.php");
+
+
     $_SESSION['last_visited'] = "login.html";
 
     if(isset($_SESSION['pfp'])){
@@ -34,10 +37,16 @@
                     <a href="more.html">Περισσότερα</a>
                     <a href="reqs.html">Προϋποθέσεις</a>
                     <?php
+                        if($_SESSION['approved_applications'] == true){
+                            echo '<a href="approvedApplications.html">Νέα</a>';
+                        }
+
                         if(isset($_SESSION['group_type'])){
                             echo '<a href="application.html">Αίτηση</a>';
+
+
                             if($group_type == "administrator"){
-                            echo '<a href="admin.html">Διαχείριση</a>';
+                                echo '<a href="admin.html">Διαχείριση</a>';
                             }
                         }
                     ?>

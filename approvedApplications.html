@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require("./scripts/post_variables.php");
+
     $_SESSION['last_visited'] = "reqs.html";
 
     if(isset($_SESSION['pfp'])){
@@ -35,10 +37,16 @@
                     <a href="more.html">Περισσότερα</a>
                     <a href="reqs.html">Προϋποθέσεις</a>
                     <?php
+                        if($_SESSION['approved_applications']){
+                            echo '<a href="approvedApplications.html">Νέα</a>';
+                        }
+
                         if(isset($_SESSION['group_type'])){
                             echo '<a href="application.html">Αίτηση</a>';
+
+
                             if($group_type == "administrator"){
-                            echo '<a href="admin.html">Διαχείριση</a>';
+                                echo '<a href="admin.html">Διαχείριση</a>';
                             }
                         }
                     ?>
@@ -68,7 +76,64 @@
             <div class="reqs">
                 <div class="reqs-table">
                     <table name="table" id="table" cellspacing="0">
-                        <th colspan="3">ΑΠΟΔΕΚΤΕΣ ΑΙΤΗΣΕΙΣ</th>
+                        <th colspan="9">ΑΠΟΔΕΚΤΕΣ ΑΙΤΗΣΕΙΣ</th>
+
+                        <?php
+                            // Connecting to database
+
+                            require "./scripts/credentials.php";
+
+                            $con = mysqli_connect($host,$user,$password);
+                            if (!$con){
+                                echo "problem in the connection"/* .mysqli_error() */;
+                                die;
+                            }
+                            mysqli_select_db($con, $db);
+
+                            // Query to get all applications
+                            $query = "  SELECT *
+                                        FROM APPLICATIONS, APPLIED, USERS
+                                        WHERE APPLICATIONS.id = APPLIED.app_id
+                                        AND USERS.id = APPLIED.user_id
+                                        AND status = 'approved'";
+                
+                            // var_dump($query);   
+                        
+                            // Getting applications from server
+                            $result = mysqli_query($con, $query);
+                        
+                            $marked = true;
+                            $class = "";
+                            
+                            $loops = mysqli_num_rows($result);
+
+                            for($i = 0; $i < $loops; $i++){
+
+                                $rows = mysqli_fetch_assoc($result);
+                                // var_dump($rows);
+
+                                $rows_pfp = $rows['pfp'];
+                                $rows_fname = $rows['fname'];
+                                $rows_lname = $rows['lname'];
+                                $rows_am = $rows['am'];
+                                $rows_email = $rows['email'];
+                                $rows_percentage = $rows['percentage'];
+                                $rows_average = $rows['average'];
+                                $rows_english_level = $rows['english_level'];
+                                $rowspfp = $rows['pfp'];
+
+                                $rows_pfp = substr($rows_pfp, 1);
+
+                                $marked = !$marked;
+                                if($marked){
+                                    $class = "marked";
+                                }
+                                else{
+                                    $class = "unmarked";
+                                }
+                                echo "<tr class=\"$class\"><td><img src=\"$rows_pfp\"></td><td>$rows_fname</td><td>$rows_lname</td><td>$rows_am</td><td>$rows_email</td><td>$rows_percentage</td><td>$rows_average</td><td>$rows_english_level</td></tr>";
+                            }
+                        ?>
                     </table>
                 </div>
             </div>
@@ -96,6 +161,6 @@
         </div>
         
     </body>
-    <script src="scripts/results.js"></script>     
+    <!-- <script src="scripts/results.js"></script>      -->
     <script src="scripts/stickyHeader.js"></script>     
 </html>

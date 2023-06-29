@@ -125,7 +125,6 @@ body{
 }
 
 .reqs-table th{
-    overflow-y: scroll;
     height: 25%;
     /* border: 1px solid black; */
     border-top-left-radius: 15px;

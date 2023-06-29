@@ -58,7 +58,7 @@ function formCheck(){
     document.getElementById("message").innerHTML = "&nbsp;";
 }
 
-function reqsForm(){
+function reqsCheck(){
     var studyYearValue = document.getElementById("studyYear").value;
     var percentageValue = document.getElementById("percentage").value;
     var averageValue = document.getElementById("average").value;

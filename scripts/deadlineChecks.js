@@ -26,7 +26,7 @@ function formCheck(){
     startDate = document.getElementById("date_start").value;
     endDate = document.getElementById("date_end").value;
 
-    var valid_period = new Date(startDate).getTime() < new Date(endDate).getTime();
+    var valid_period = new Date(startDate).getTime() <= new Date(endDate).getTime();
     // document.getElementById("submit").value = valid_period; // For testing purposes
 
     if(!valid_period){
@@ -43,10 +43,10 @@ function formCheck(){
         document.getElementById("submit").classList.add("form-button-disabled");
     }
     else{
-            document.getElementById("date_endSpan").innerHTML = "";
-    
-            document.getElementById("submit").disabled = false;
-            document.getElementById("submit").classList.remove("form-button-disabled");
-            document.getElementById("submit").classList.add("form-button");
+        document.getElementById("date_endSpan").innerHTML = "";
+
+        document.getElementById("submit").disabled = false;
+        document.getElementById("submit").classList.remove("form-button-disabled");
+        document.getElementById("submit").classList.add("form-button");
     }
 }

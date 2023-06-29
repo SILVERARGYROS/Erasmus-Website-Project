@@ -164,7 +164,7 @@ function passwordCheck(){
 
 function formCheck(){
     if(fnameBool == 0 || lnameBool == 0 || amBool == 0 || emailBool == 0 || usernameBool == 0 || passwordBool == 0 || confirmBool == 0){
-        document.getElementById("submit").value = fnameBool  + " " + lnameBool  + " " + amBool  + " " + emailBool  + " " + usernameBool  + " " + passwordBool  + " " + confirmBool; // For testing purposes
+        // document.getElementById("submit").value = fnameBool  + " " + lnameBool  + " " + amBool  + " " + emailBool  + " " + usernameBool  + " " + passwordBool  + " " + confirmBool; // For testing purposes
         document.getElementById("submit").disabled = true;
         document.getElementById("submit").classList.remove("form-button");
         document.getElementById("submit").classList.add("form-button-disabled");

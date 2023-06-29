@@ -51,7 +51,7 @@
     $_SESSION['lname'] = $credentials['lname'];
     $_SESSION['am'] = $credentials['am'];
     $_SESSION['email'] = $credentials['email'];
-    $_SESSION['submitted'] = false;
+    $_SESSION['applied'] = false;
     $_SESSION['pfp'] = substr($pfp, 1);
 
 

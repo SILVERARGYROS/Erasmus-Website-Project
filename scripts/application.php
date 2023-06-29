@@ -32,11 +32,11 @@
                                   FROM USERS
                                   WHERE am = '$am'");
 
-    $user_credentials = mysqli_fetch_assoc($result);
+$user_credentials = mysqli_fetch_assoc($result);
+var_dump($user_credentials);              //For testing purposes
     $user_id = $user_credentials['id'];
     $username = $user_credentials['username'];
 
-    // echo var_dump($_FILES);              //For testing purposes
 
     // Finding temp names of files
     $grade_file_tmp = $_FILES['grade_file']['tmp_name'];
@@ -44,8 +44,8 @@
     
     // basename() may prevent filesystem traversal attacks (I don't fully get it ;-;) 
     // Source: https://www.php.net/manual/en/function.move-uploaded-file.php
-    $grade_file = basename($_FILES['grade_file']['name'])."pdf";
-    $english_file = basename($_FILES['english_file']['name'])."pdf";
+    $grade_file = basename($_FILES['grade_file']['name']);
+    $english_file = basename($_FILES['english_file']['name']);
     
     // Storing the uploaded files in user's upload folder
     move_uploaded_file($grade_file_tmp, "../uploads/$username/$grade_file");
@@ -58,7 +58,7 @@
 
         for($i = 0; $i < $count; $i++){
             $extra_language_files_tmp = $_FILES['extra_language_files']['tmp_name'][$i];
-            $extra_language_files = basename($_FILES['extra_language_files']['name'][$i].".pdf");
+            $extra_language_files = basename($_FILES['extra_language_files']['name'][$i]);
             move_uploaded_file($extra_language_files_tmp, "../uploads/$username/$extra_language_files");
             $extra_language_file_list = $extra_language_file_list.$extra_language_files.";";
         }
@@ -115,6 +115,7 @@
     // ###### Closing ###### //
 
     $_SESSION['application'] = "submitted";
+    $_SESSION['applied'] = true;
     mysqli_close($con);
     header("location: ../application.html");
 ?>

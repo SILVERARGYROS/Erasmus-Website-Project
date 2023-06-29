@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require "credentials.php";
 
     // Connecting to database
@@ -13,7 +14,7 @@
     $result = mysqli_query($con, "SELECT * 
                                   FROM SYSTEM_VARIABLES;");
 
-    $row = mysqli_fetch_all($result);
+    $row = mysqli_fetch_assoc($result);
     
     echo json_encode($row);
 

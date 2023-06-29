@@ -12,6 +12,76 @@ var checkboxBool = 0;
 
 window.onload = function() {deadline()};
 
+function lockForm(){
+    document.getElementById("percentage").disabled = true;
+    document.getElementById("percentage").classList.remove('input');
+    document.getElementById("percentage").classList.add('disabled-input');
+
+    document.getElementById("average").disabled = true;
+    document.getElementById("average").classList.remove('input');
+    document.getElementById("average").classList.add('disabled-input');
+
+    document.getElementById("english_level1").disabled = true;
+    document.getElementById("english_level1").classList.remove('radio-button');
+    document.getElementById("english_level1").classList.add('disabled-radio-button');
+
+    document.getElementById("english_level2").disabled = true;
+    document.getElementById("english_level2").classList.remove('radio-button');
+    document.getElementById("english_level2").classList.add('disabled-radio-button');
+
+    document.getElementById("english_level3").disabled = true;
+    document.getElementById("english_level3").classList.remove('radio-button');
+    document.getElementById("english_level3").classList.add('disabled-radio-button');
+
+    document.getElementById("english_level4").disabled = true;
+    document.getElementById("english_level4").classList.remove('radio-button');
+    document.getElementById("english_level4").classList.add('disabled-radio-button');
+
+    document.getElementById("english_level5").disabled = true;
+    document.getElementById("english_level5").classList.remove('radio-button');
+    document.getElementById("english_level5").classList.add('disabled-radio-button');
+
+    document.getElementById("english_level6").disabled = true;
+    document.getElementById("english_level6").classList.remove('radio-button');
+    document.getElementById("english_level6").classList.add('disabled-radio-button');
+
+    document.getElementById("extra_languages1").disabled = true;
+    document.getElementById("extra_languages1").classList.remove('radio-button');
+    document.getElementById("extra_languages1").classList.add('disabled-radio-button');
+
+    document.getElementById("extra_languages2").disabled = true;
+    document.getElementById("extra_languages2").classList.remove('radio-button');
+    document.getElementById("extra_languages2").classList.add('disabled-radio-button');
+
+    document.getElementById("uni1").disabled = true;
+    document.getElementById("uni1").classList.remove('input');
+    document.getElementById("uni1").classList.add('disabled-input');
+
+    document.getElementById("uni2").disabled = true;
+    document.getElementById("uni2").classList.remove('input');
+    document.getElementById("uni2").classList.add('disabled-input');
+
+    document.getElementById("uni3").disabled = true;
+    document.getElementById("uni3").classList.remove('input');
+    document.getElementById("uni3").classList.add('disabled-input');
+    
+    document.getElementById("grade_file").disabled = true;
+    document.getElementById("grade_file").classList.remove('input');
+    document.getElementById("grade_file").classList.add('disabled-input');
+
+    document.getElementById("english_file").disabled = true;
+    document.getElementById("english_file").classList.remove('input');
+    document.getElementById("english_file").classList.add('disabled-input');
+
+    document.getElementById("extra_language_files[]").disabled = true;
+    document.getElementById("extra_language_files[]").classList.remove('input');
+    document.getElementById("extra_language_files[]").classList.add('disabled-input');
+
+    document.getElementById('checkbox').disabled = true;
+    document.getElementById('checkmark').classList.remove('checkmark');
+    document.getElementById('checkmark').classList.add('disabled-checkmark');
+}
+
 function deadline(){
     if(window.XMLHttpRequest){      // for "normal" browsers...
         xmlhttp = new XMLHttpRequest();
@@ -26,93 +96,35 @@ function deadline(){
 
             const dates = JSON.parse(query);
             
-            document.getElementById("deadlineInfo").innerHTML = "Προθεσμία Υποβολής: " + dates.deadline_end;
+            document.getElementById("deadlineStartInfo").innerHTML = "Έναρξη Περιόδου Υποβολής: " +  dates.deadline_start;
+            document.getElementById("deadlineEndInfo").innerHTML = "Λήξη Περιόδου Υποβολής: " +  dates.deadline_end;
             
             
             // Checking if deadline has already passed 
             const currentDate = new Date();     // yyyy-mm-ddThh:mm:ss.mmmZ
-            const deadlineDate = new Date(dates.deadline_end);
+            const deadlineEnd = new Date(dates.deadline_end);
+            const deadlineStart = new Date(dates.deadline_start);
 
 
             // Checking if deadline has already passed first
-            if(new Date(currentDate).getTime() > new Date(deadlineDate).getTime()){
-                document.getElementById("timeRemaining").innerHTML = "DeadLine has expired!";
+            if(new Date(currentDate) < new Date(deadlineStart)){
+                document.getElementById("timeRemaining").innerHTML = "Application period has not started yet!";
                 deadlineBool = 0;
-                return;
             }
-
-            // Calculating remaining time
-            var timeDiff = (new Date(deadlineDate).getTime() - new Date(currentDate).getTime());
-            var years = Math.floor(timeDiff / 31540000000);
-            var months = Math.floor(timeDiff / 31540000000 / 2628000000);
-            var days = Math.floor(timeDiff / 31540000000 / 2628000000 / 86400000);
-            var hours = Math.floor(timeDiff / 31540000000 / 2628000000 / 86400000 / 3600000);
-            var minutes = Math.ceil(timeDiff / 31540000000 / 2628000000 / 86400000 / 3600000 / 60000);
-
-
-            // Generating remaining time strings
-            var remYears;
-            var remMonths;
-            var remDays;
-            var remHours;
-            var remMinutes;
-
-
-            if(years == 1){
-                remYears = ", 1 χρόνος";
-            }
-            else if(years > 1){
-                remYears = ", " +  years + " χρόνια";
+            else if(new Date(currentDate) > new Date(deadlineEnd)){
+                document.getElementById("timeRemaining").innerHTML = "Deadline expired!";
+                deadlineBool = 0;
             }
             else{
-                remYears = "";
+                document.getElementById("timeRemaining").innerHTML = "There is still time left.";
+                deadlineBool = 1;
             }
 
-            if(months == 1){
-                remMonths = ", 1 μήνας";
-            }
-            else if(months > 1){
-                remMonths = ", " + months + " μήνες";
-            }
-            else{
-                remMonths = "";
-            }
 
-            if(days == 1){
-                remDays = ", 1 ημέρα";
-            }
-            else if(days > 1){
-                remDays = ", " + days + " ημέρες";
-            }
-            else{
-                remDays = "";
-            }
 
-            if(hours == 1){
-                remHours = ", 1 ώρα";
+            if(deadlineBool == 0){
+                lockForm();
             }
-            else if(hours > 1){
-                remHours = ", " + hours + " ώρες";
-            }
-            else{
-                remHours = "";
-            }
-            
-            if(minutes == 1){
-                remMinutes = "1 λεπτό";
-            }
-            else if(minutes > 1){
-                remMinutes = ", " + minutes + " λεπτά";
-            }
-            else{
-                remMinutes = "";
-            }
-
-            "year=" + years + "&month=" + months + "&day=" + days + "&hour=" + hours + "&minute=" + minutes;
-
-            // Generating final remaining time string
-            var timeString = "(απομένουν: " + remYears + remMonths + remDays + remHours + remMinutes + ")";
-            document.getElementById("timeRemaining").innerHTML = timeString;
         }
     }
     xmlhttp.open("GET","./scripts/applicationChecks.php", true);
@@ -173,7 +185,7 @@ function uni1Check(){
 }
 
 function grade_fileCheck(){
-    var filled = document.getElementById("grade_file").files.length;
+    var filled = document.getElementById("grade_file").files.length == 0;
     if(filled){
         grade_fileBool = 1;
     }
@@ -183,7 +195,7 @@ function grade_fileCheck(){
 }
 
 function english_fileCheck(){
-    var filled = document.getElementById("english_file").files.length;
+    var filled = document.getElementById("english_file").files.length == 0;
     if(filled){
         english_fileBool = 1;
     }
@@ -202,58 +214,16 @@ function checkboxCheck(){
     }
 }
 
-function formCheck(){
-    percentageCheck();
-    averageCheck();
-    english_levelCheck();
-    extra_languagesCheck();
-    uni1Check();
-    grade_fileCheck();
-    english_fileCheck();
-    checkboxCheck();
-        
-    if(deadlineBool == 0){
-        document.getElementById("submit").value = "Deadline has passed."
-
-        document.getElementById("percentage").disabled = true;
-        document.getElementById("percentage").classList.remove(input);
-        document.getElementById("percentage").classList.add(disabled-input);
-
-        document.getElementById("average").disabled = true;
-        document.getElementById("average").classList.remove(input);
-        document.getElementById("average").classList.add(disabled-input);
-
-        document.getElementById("english_level").disabled = true;
-        document.getElementById("english_level").classList.remove(radio-button);
-        document.getElementById("english_level").classList.add(disabled-radio-button);
-
-        document.getElementById("extra_languages").disabled = true;
-        document.getElementById("extra_languages").classList.remove(radio-button);
-        document.getElementById("extra_languages").classList.add(disabled-radio-button);
-
-        document.getElementById("grade_file").disabled = true;
-        document.getElementById("grade_file").classList.remove(input);
-        document.getElementById("grade_file").classList.add(disabled-input);
-
-        document.getElementById("english_file").disabled = true;
-        document.getElementById("english_file").classList.remove(input);
-        document.getElementById("english_file").classList.add(disabled-input);
-
-        document.getElementById('checkbox').disabled = true;
-        document.getElementById('checkmark').classList.remove(checkmark);
-        document.getElementById('checkmark').classList.add(disabled-checkmark);
+function formCheck(applied){
+    if(applied == true){
+        lockForm();
+        document.getElementById("appliedStatus").innerHTML = "You have already submitted."
         return;
     }
     else{
-        document.getElementById("percentage").disabled = true;
-        document.getElementById("average").disabled = true;
-        document.getElementById("english_level").disabled = true;
-        document.getElementById("extra_languages").disabled = true;
-        document.getElementById("grade_file").disabled = true;
-        document.getElementById("english_file").disabled = true;
-        document.getElementById('checkbox').disabled = true;
+        document.getElementById("appliedStatus").innerHTML = "wtf";
     }
-    
+
     if(deadlineBool == 0 || percentageBool == 0 || averageBool == 0 || english_levelBool == 0 || extra_languagesBool == 0 || uni1Bool == 0 || grade_fileBool == 0 || english_fileBool == 0 || checkboxBool == 0){
         document.getElementById("submit").value = deadlineBool + " " + percentageBool + " " + averageBool + " " + english_levelBool + " " + extra_languagesBool + " " + uni1Bool + " " + grade_fileBool + " " + english_fileBool + " " + checkboxBool
         document.getElementById("submit").disabled = true;

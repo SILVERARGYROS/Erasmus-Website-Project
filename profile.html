@@ -2,6 +2,7 @@
     session_start();
     $_SESSION['last_visited'] = "index.html";
 
+    $applied = $_SESSION['applied'];
     
     if(isset($_SESSION['pfp'])){
         $email = $_SESSION["email"];
@@ -75,7 +76,17 @@
                     </div>
                     <div class="forminfo">
                         <p class="title1 text">Κατάσταση Αίτησης</p>
-                        <p class="formstatus text">Η αίτησή σας δεν έχει εγκριθεί ακόμα.</p>
+                        <p class="formstatus text">
+                            <?php
+                                if($applied){
+                                    echo 'Η αίτησή σας δεν έχει εγκριθεί ακόμα.</p><a href="application.html"class="learn-more-button stroke form text">Επεξεργασία</a>';
+                                }
+                                else{
+                                    echo "Δεν έχετε υποβάλει αίτηση</p>";
+                                }
+                            ?>
+
+                        </p>
                       <a href="application.html"class="learn-more-button stroke form text">Επεξεργασία</a>
                     </div>
                     <div class="account">

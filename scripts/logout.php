@@ -12,7 +12,7 @@
     unset($_SESSION['email']);
     unset($_SESSION['pfp']);
     unset($_SESSION['group_type']);
-    unset($_SESSION['submitted']);
+    unset($_SESSION['applied']);
 
 
     // We do not use session_destroy(); because some data 

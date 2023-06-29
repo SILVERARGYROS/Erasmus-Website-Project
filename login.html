@@ -84,6 +84,7 @@
                         <?php
                             if(isset($_SESSION["wrongCredentials"])){
                                 echo '<span style="color:red">'.$_SESSION["wrongCredentials"].'</span>';
+                                unset($_SESSION["wrongCredentials"]);
                             }
                         ?>
 
@@ -91,7 +92,7 @@
                         <input name="submit" id="submit" type="submit" class="form-button-disabled" value="Συνδεθείτε" disabled></input>
                         <div class="sign-up">
                             Δεν είστε μέλος; 
-                            <a href="#">Εγγραφτείτε τώρα</a>
+                            <a href="sign-up.html">Εγγραφτείτε τώρα</a>
                         </div>
                     </form>
                 </div>

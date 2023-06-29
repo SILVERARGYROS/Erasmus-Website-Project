@@ -7,13 +7,9 @@
     $fname = $_SESSION['fname'];
     $lname = $_SESSION['lname'];
     $am = $_SESSION['am'];
-
-    if(isset($_SESSION['pfp'])){
-        $pfp = $_SESSION['pfp'];
-    }
-    if(isset($_SESSION['group_type'])){
-        $group_type = $_SESSION['group_type'];
-    }
+    $pfp = $_SESSION['pfp'];
+    $group_type = $_SESSION['group_type'];
+    $applied = $_SESSION['applied'];
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -43,7 +39,7 @@
                         if(isset($_SESSION['group_type'])){
                             echo '<a href="application.html">Αίτηση</a>';
                             if($group_type == "administrator"){
-                            echo '<a href="admin.html">Διαχείριση</a>';
+                                echo '<a href="admin.html">Διαχείριση</a>';
                             }
                         }
                     ?>
@@ -85,10 +81,10 @@
                     <section class="app-content">
                         Πρέπει επίσης να διαβάσετε και να συμφωνείτε με τους <a href="https://eurep.auth.gr/el/students/studies/requirements">όρους συμμετοχής και μετακίνησης</a>.
                     </section>
-                    <section name="deadlineInfo" id="deadlineInfo" class="app-content">
-                        Προθεσμία Υποβολής: Ημερομηνία
-                    </section>
-                    <section name="timeRemaining" id="timeRemaining" class="app-content">(Απομένει: Υπόλοιπος χρόνος)</section>
+                    <section name="deadlineStartInfo" id="deadlineStartInfo" class="app-content"></section>
+                    <section name="deadlineEndInfo" id="deadlineEndInfo" class="app-content"></section>
+                    <section name="timeRemaining" id="timeRemaining" class="app-content"></section>
+                    <section name="appliedStatus" id="appliedStatus" class="app-content"></section>
                 </div>
                     
                 <div class="app-platform">
@@ -96,7 +92,7 @@
                         <div class="text">
                             Φόρμα Αίτησης
                         </div>
-                        <form name="appForm" id="appForm" action="./scripts/application.php" method="POST" enctype="multipart/form-data" oninput="formCheck()">
+                        <form name="appForm" id="appForm" action="./scripts/application.php" method="POST" enctype="multipart/form-data" oninput="formCheck('<?php echo $applied?>')">
                             <div class="field">
                                 <label>Όνομα:</label>
                                 <input name="fname" type="text" class="disabled-input" value="<?php echo $fname; ?>" readonly required>
@@ -120,19 +116,19 @@
                             <div class="field">
                                 <label>Πιστοποιητικό γνώσης της αγγλικής γλώσσας:</label>
                                 <div class="radio-field">
-                                    A1<input name="english_level" id="english_level" type="radio" class="radio-button" value="A1" onclick="english_levelCheck()">
-                                    A2<input name="english_level" id="english_level" type="radio" class="radio-button" value="A2" onclick="english_levelCheck()">
-                                    B1<br><input name="english_level" id="english_level" type="radio" class="radio-button" value="B1" onclick="english_levelCheck()">
-                                    B2<input name="english_level" id="english_level" type="radio" class="radio-button" value="B2" onclick="english_levelCheck()">
-                                    C1<input name="english_level" id="english_level" type="radio" class="radio-button" value="C1" onclick="english_levelCheck()">
-                                    C2<input name="english_level" id="english_level" type="radio" class="radio-button" value="C2" onclick="english_levelCheck()">
+                                    A1<input name="english_level" id="english_level1" type="radio" class="radio-button" value="A1" onclick="english_levelCheck()">
+                                    A2<input name="english_level" id="english_level2" type="radio" class="radio-button" value="A2" onclick="english_levelCheck()">
+                                    B1<br><input name="english_level" id="english_level3" type="radio" class="radio-button" value="B1" onclick="english_levelCheck()">
+                                    B2<input name="english_level" id="english_level4" type="radio" class="radio-button" value="B2" onclick="english_levelCheck()">
+                                    C1<input name="english_level" id="english_level5" type="radio" class="radio-button" value="C1" onclick="english_levelCheck()">
+                                    C2<input name="english_level" id="english_level6" type="radio" class="radio-button" value="C2" onclick="english_levelCheck()">
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="radio-label">Γνώση επιπλέον ξένων γλωσσών:</label>
                                 <div class="radio-field">
-                                    ΟΧΙ<input name="extra_languages" id="extra_languages" type="radio" class="radio-button" value="no" onclick="extra_languagesCheck()">
-                                    ΝΑΙ<input name="extra_languages" id="extra_languages" type="radio" class="radio-button" value="yes" onclick="extra_languagesCheck()">
+                                    ΟΧΙ<input name="extra_languages" id="extra_languages1" type="radio" class="radio-button" value="no" onclick="extra_languagesCheck()">
+                                    ΝΑΙ<input name="extra_languages" id="extra_languages2" type="radio" class="radio-button" value="yes" onclick="extra_languagesCheck()">
                                 </div>
                             </div>
                             <div class="field">

@@ -51,10 +51,10 @@
                                 WHERE user_id = '$user_id';");
 
     if(mysqli_num_rows($result) < 1){
-        $_SESSION['submitted'] = false;
+        $_SESSION['applied'] = false;
     }
     else{
-        $_SESSION['submitted'] = true;
+        $_SESSION['applied'] = true;
     }
 
 

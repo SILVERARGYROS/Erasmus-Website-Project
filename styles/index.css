@@ -320,6 +320,10 @@ body{
 		font-weight: bolder;
 		transition: 0.5s;
 	}
+
+	.welcome3_1 a.learn-more-button{ /* we tried to hide the underline ;-; */
+		text-decoration: none;
+	}
 }
 
 @media screen and (max-width: 1048px) {

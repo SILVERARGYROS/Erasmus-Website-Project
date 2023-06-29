@@ -2,12 +2,13 @@
     session_start();
     $_SESSION['last_visited'] = "index.html";
 
+    $participation = "login.html";
     if(isset($_SESSION['pfp'])){
         $pfp = $_SESSION['pfp'];
-    }
-    if(isset($_SESSION['group_type'])){
         $group_type = $_SESSION['group_type'];
+        $participation = "application.html";
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -72,7 +73,7 @@
                     Καλωσήρθατε στην<br>
                     επίσημη ιστοσελίδα<br>
                     Erasmus<br>
-                    <a class="learn-more-button">Μάθετε περισσότερα</a>
+                    <a href="more.html" class="learn-more-button">Μάθετε περισσότερα</a>
                 </section>
             </div>
             <div class="welcome2">
@@ -93,7 +94,7 @@
                     διευρύνουν τις γνώσεις τους σε παγκόσμιο επίπεδο.<br>
                     <br>
                     <br>
-                    <a class="learn-more-button">Μάθετε περισσότερα</a>
+                    <a href="more.html" class="learn-more-button">Μάθετε περισσότερα</a>
                 </section>
             </div>
             <div class="welcome3"> 
@@ -112,7 +113,7 @@
                         Ενημερωθείτε για τις προΰποθέσεις δήλωσης αίτησης.<br>
                         <br>
                         <br>
-                        <a class="learn-more-button">Προϋποθέσεις Συμμετοχής</a>
+                        <a href="reqs.html" class="learn-more-button">Προϋποθέσεις Συμμετοχής</a>
                     </section>
                     <section class="main_title">
                         <br>
@@ -130,7 +131,7 @@
                         εκδρομές του κόσμου.<br>
                         <br>
                         <br>
-                        <a class="learn-more-button">Δήλωση Συμμετοχής</a>
+                        <a href="<?php echo $participation ?>" class="learn-more-button">Δήλωση Συμμετοχής</a>
                     </section>
                 </div> 
                 <div class="welcome3_2"></div>
